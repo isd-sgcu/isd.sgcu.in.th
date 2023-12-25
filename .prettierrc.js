@@ -6,7 +6,7 @@ const config = {
   tabWidth: 2,
   semi: true,
   singleQuote: false,
-  endOfLine: "auto",
+  endOfLine: "lf",
   printWidth: 80,
   plugins: [
     "prettier-plugin-astro",
