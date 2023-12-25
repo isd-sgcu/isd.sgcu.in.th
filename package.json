@@ -1,16 +1,39 @@
 {
   "name": "isd.sgcu.in.th",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "packageManager": "pnpm@8.12.1",
+  "engines": {
+    "node": "^20.9",
+    "pnpm": "^8"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "prettier --check \"*.{json,cjs,js,mjs,md}\" src && eslint src",
+    "format": "prettier --write \"*.{json,cjs,js,mjs,md}\" src && eslint src --fix"
   },
   "dependencies": {
-    "astro": "4.0.7"
+    "@astrojs/svelte": "5.0.2",
+    "@astrojs/tailwind": "5.0.4",
+    "astro": "4.0.7",
+    "svelte": "4.2.8",
+    "tailwindcss": "3.4.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "8.56.0",
+    "@typescript-eslint/eslint-plugin": "6.15.0",
+    "@typescript-eslint/parser": "6.15.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-astro": "0.31.0",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "prettier": "3.1.1",
+    "prettier-plugin-astro": "0.12.2",
+    "prettier-plugin-organize-imports": "3.2.4",
+    "prettier-plugin-svelte": "3.1.2",
+    "prettier-plugin-tailwindcss": "0.5.9"
   }
 }
