@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import isdlogo from "../../assets/isd-logo.png";
+---
+
+<Layout title="Contact">
+  <main class="items-center justify-center bg-[#0F0F0F] w-full min-h-screen px-[8%] lg:px-[3%] py-7 lg:py-12">
+    <p class="text-white font-bold text-4xl hidden lg:block transition-all translate-x-0">Contact</p>
+    <div class="grid lg:grid-cols-2 place-items-stretch mt-7 lg:mt-16">
+      <div class="flex justify-center lg:justify-start">
+        <Image class="rounded-full w-[50%] lg:w-[80%]" src={isdlogo} alt="isd-logo" />
+      </div>
+
+      <div class="text-right pt-20 lg:py-10 flex flex-col space-y-48 lg:space-y-0 lg:h-full lg:justify-between">
+        <div class="text-white text-xl lg:text-5xl font-light space-y-4 lg:space-y-12">
+          <p>xxxxxxxx@gmail.com</p>
+          <p>Instagram</p>
+        </div>
+        <div class="text-white text-6xl lg:text-8xl font-bold tracking-[.64rem]">Get In <br/> Touch</div>
+      </div>
+    </div>
+  </main>
+</Layout>
