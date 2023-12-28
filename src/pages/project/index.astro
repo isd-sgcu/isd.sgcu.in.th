@@ -1,0 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const projects = [
+  {
+    title: "something-1",
+    image: "project-img.png",
+  },
+  {
+    title: "something-2",
+    image: "project-img.png",
+  },
+  {
+    title: "something-3",
+    image: "project-img.png",
+  },
+  {
+    title: "something-4",
+    image: "project-img.png",
+  },
+  {
+    title: "something-5",
+    image: "project-img.png",
+  },
+  {
+    title: "something-6",
+    image: "project-img.png",
+  },
+  {
+    title: "something-7",
+    image: "project-img.png",
+  },
+  {
+    title: "something-8",
+    image: "project-img.png",
+  },
+];
+---
+
+<Layout title="Projects">
+  <main class="min-h-screen bg-[#0f0f0f] text-white">
+    <!-- Navbar -->
+    <div class="ml-[40px]">
+      <h1 class="pt-3 text-3xl font-bold">Project</h1>
+      <div
+        id="projects"
+        class="mt-3 flex items-center gap-x-20 overflow-x-scroll scroll-smooth whitespace-nowrap"
+      >
+        {
+          projects.map((project, idx) => (
+            <button class="w-fit shrink-0">
+              <img
+                id={project.title}
+                src={project.image}
+                alt={project.title}
+                class={`duration-300 ease-in-out ${
+                  idx % 2 == 0 ? "h-[40vh] md:h-[70vh]" : "h-[30vh] md:h-[40vh]"
+                }`}
+              />
+            </button>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
