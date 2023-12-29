@@ -43,6 +43,7 @@ const projects = [
       <h1 class="ml-[40px] flex flex-none pt-3 text-3xl font-bold">Project</h1>
       <div class="flex h-full flex-auto">
         <div
+          id="projects-container"
           class="no-scrollbar mt-3 flex items-center gap-x-20 overflow-x-scroll overscroll-contain scroll-smooth whitespace-nowrap"
         >
           {
@@ -68,6 +69,10 @@ const projects = [
           }
         </div>
       </div>
+      <div class="mt-3 flex h-1 w-full flex-row">
+        <div id="progress" class="h-1 bg-white"></div>
+        <div id="remain" class="h-1 w-full bg-gray-600"></div>
+      </div>
     </div>
   </main>
 </Layout>
@@ -78,7 +83,8 @@ const projects = [
     for (let i = 0; i < projects.length; ++i) {
       projects[i].style.filter = `grayscale(${percent}%)`;
     }
-    const hovered_project = document.querySelectorAll<HTMLElement>(".projects:hover");
+    const hovered_project =
+      document.querySelectorAll<HTMLElement>(".projects:hover");
     for (let i = 0; i < hovered_project.length; ++i) {
       hovered_project[i].style.filter = `grayscale(0%)`;
     }
@@ -92,6 +98,20 @@ const projects = [
       applyGrayScale(0);
     });
   });
+  const projects_container = document.getElementById("projects-container")!;
+  projects_container.addEventListener("scroll", () => {
+    const scrollLeft = projects_container.scrollLeft;
+    const scrollWidth = projects_container.scrollWidth;
+    const clientWidth = projects_container.clientWidth;
+    const percent = (scrollLeft * 100) / (scrollWidth - clientWidth);
+    const progress = document.getElementById("progress")!;
+    const remain = document.getElementById("remain")!;
+    const progress_percent = Math.min(percent, 100);
+    const remain_precent = Math.max(100 - percent, 0);
+    progress.style.width = `${progress_percent}%`;
+    remain.style.width = `${remain_precent}%`;
+  });
+  console.log(document.getElementById("projects")!.scrollLeft);
 </script>
 
 <style>
