@@ -1,16 +1,14 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+
   function applyHoverEffect(percent: number, scale: number) {
-    const projects = document.querySelectorAll<HTMLElement>(".projects");
-    for (let i = 0; i < projects.length; ++i) {
-      projects[i].style.filter = `grayscale(${percent}%)`;
-      projects[i].style.transform = `scale(${scale})`;
+    for (let i = 0; i < projectElements.length; ++i) {
+      projectElements[i].style.filter = `grayscale(${percent}%)`;
+      projectElements[i].style.transform = `scale(${scale})`;
     }
-    const hovered_project =
-      document.querySelectorAll<HTMLElement>(".projects:hover");
-    for (let i = 0; i < hovered_project.length; ++i) {
-      hovered_project[i].style.filter = `grayscale(0%)`;
-      hovered_project[i].style.transform = `scale(1.05)`;
-    }
+    if (hoverIndex == -1) return;
+    projectElements[hoverIndex].style.filter = `grayscale(0%)`;
+    projectElements[hoverIndex].style.transform = `scale(1.05)`;
   }
 
   function handleScroll() {
@@ -18,8 +16,8 @@
     const scrollLeft = projectContainer.scrollLeft;
     const clientWidth = projectContainer.clientWidth;
     const percent = (scrollLeft / (scrollWidth - clientWidth)) * 100;
-    progress!.style.width = `${Math.min(100, percent)}%`;
-    remain!.style.width = `${100 - percent}%`;
+    progress.style.width = `${Math.min(100, percent)}%`;
+    remain.style.width = `${100 - percent}%`;
   }
 
   type IProject = {
@@ -30,6 +28,12 @@
   let projectContainer: HTMLDivElement;
   let progress: HTMLDivElement;
   let remain: HTMLDivElement;
+  let projectElements: NodeListOf<HTMLImageElement>;
+  let hoverIndex: number = -1;
+
+  onMount(() => {
+    projectElements = document.querySelectorAll<HTMLImageElement>(".project");
+  });
 </script>
 
 <div>
@@ -53,11 +57,23 @@
             alt={project.title}
             class={`duration-300 ease-in-out ${
               idx % 2 == 0 ? "h-[45vh] md:h-[70vh]" : "h-[30vh] md:h-[40vh]"
-            } projects`}
-            on:mouseover={() => applyHoverEffect(100, 0.95)}
-            on:mouseout={() => applyHoverEffect(0, 1)}
-            on:focus={() => applyHoverEffect(100, 0.95)}
-            on:blur={() => applyHoverEffect(0, 1)}
+            } project`}
+            on:mouseover={() => {
+              hoverIndex = idx;
+              applyHoverEffect(100, 0.95);
+            }}
+            on:mouseout={() => {
+              hoverIndex = -1;
+              applyHoverEffect(0, 1);
+            }}
+            on:focus={() => {
+              hoverIndex = idx;
+              applyHoverEffect(100, 0.95);
+            }}
+            on:blur={() => {
+              hoverIndex = -1;
+              applyHoverEffect(0, 1);
+            }}
           />
         </button>
       {/each}
