@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import ProjectContainer from "../../components/project/ProjectContainer.svelte";
 const projects = [
   {
     title: "something-1",
@@ -41,88 +42,7 @@ const projects = [
     <!-- Navbar -->
     <div class="flex flex-col">
       <h1 class="ml-[40px] flex flex-none pt-3 text-3xl font-bold">Project</h1>
-      <div class="flex h-full flex-auto">
-        <div
-          id="projects-container"
-          class="no-scrollbar mt-3 flex items-center gap-x-20 overflow-x-scroll overscroll-contain scroll-smooth whitespace-nowrap"
-        >
-          {
-            projects.map((project, idx) => (
-              <button
-                class={`w-fit shrink-0 ${idx == 0 ? "ml-[40px]" : ""} ${
-                  idx == projects.length - 1 ? "mr-[40px]" : ""
-                }`}
-                onclick={`window.location.pathname = "project/${project.title}"`}
-              >
-                <img
-                  id={project.title}
-                  src={`/project/${project.image}`}
-                  alt={project.title}
-                  class={`duration-300 ease-in-out ${
-                    idx % 2 == 0
-                      ? "h-[45vh] md:h-[70vh]"
-                      : "h-[30vh] md:h-[40vh]"
-                  } projects`}
-                />
-              </button>
-            ))
-          }
-        </div>
-      </div>
-      <div class="ml-[40px] mr-[40px] mt-10">
-        <div class="flex h-1 w-full flex-row">
-          <div id="progress" class="h-1 bg-white"></div>
-          <div id="remain" class="h-1 w-full bg-gray-600"></div>
-        </div>
-      </div>
+      <ProjectContainer projects={projects} client:load />
     </div>
   </main>
 </Layout>
-
-<script>
-  function applyHoverEffect(percent: number, scale: number) {
-    const projects = document.querySelectorAll<HTMLElement>(".projects");
-    for (let i = 0; i < projects.length; ++i) {
-      projects[i].style.filter = `grayscale(${percent}%)`;
-      projects[i].style.transform = `scale(${scale})`;
-    }
-    const hovered_project =
-      document.querySelectorAll<HTMLElement>(".projects:hover");
-    for (let i = 0; i < hovered_project.length; ++i) {
-      hovered_project[i].style.filter = `grayscale(0%)`;
-      hovered_project[i].style.transform = `scale(1.05)`;
-    }
-  }
-  const projects = document.querySelectorAll<HTMLElement>(".projects");
-  projects.forEach((project) => {
-    project.addEventListener("mouseover", () => {
-      applyHoverEffect(100, 0.95);
-    });
-    project.addEventListener("mouseout", () => {
-      applyHoverEffect(0, 1);
-    });
-  });
-  const projects_container = document.getElementById("projects-container")!;
-  projects_container.addEventListener("scroll", () => {
-    const scrollLeft = projects_container.scrollLeft;
-    const scrollWidth = projects_container.scrollWidth;
-    const clientWidth = projects_container.clientWidth;
-    const percent = (scrollLeft * 100) / (scrollWidth - clientWidth);
-    const progress = document.getElementById("progress")!;
-    const remain = document.getElementById("remain")!;
-    const progress_percent = Math.min(percent, 100);
-    const remain_precent = 100 - progress_percent;
-    progress.style.width = `${progress_percent}%`;
-    remain.style.width = `${remain_precent}%`;
-  });
-</script>
-
-<style>
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>
