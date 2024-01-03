@@ -24,9 +24,9 @@
         }}
       >
         {#if open}
-          <img src={MENU_CLOSE} alt="pic" class="h-8 lg:h-12" />
+          <img src={MENU_CLOSE} alt="" class="h-8 lg:h-12" />
         {:else}
-          <img src={MENU_HAMBURGER} alt="pic" class="h-8 lg:h-12" />
+          <img src={MENU_HAMBURGER} alt="" class="h-8 lg:h-12" />
         {/if}
       </button>
     </div>
