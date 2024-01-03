@@ -11,11 +11,11 @@
   let RIGHT_ARROW = "src/assets/navbar/rightArrow.png";
 </script>
 
-<nav id="nav" class="fixed bg-stone-950 px-4 lg:px-10 w-full text-white">
-  <div class="flex bg-blue justify-between py-4">
+<nav id="nav" class="fixed w-full bg-stone-950 px-4 text-white lg:px-10">
+  <div class="bg-blue flex justify-between py-4">
     <img src={SGCU} alt="pic" class="h-8 lg:h-24" />
     <div class="flex flex-row items-center">
-      <p class="mr-2 lg:mr-6 text-base font-light font-['Space Grotesk']">
+      <p class="font-['Space Grotesk'] mr-2 text-base font-light lg:mr-6">
         Menu
       </p>
       <button
@@ -34,11 +34,11 @@
 
   {#if open}
     <div
-      class="mt-3 align-middle relative gap-10 flex flex-col min-h-screen px-4 text-4xl justify-start font-['JetBrains Mono'] font-light lg:mt-12 lg:text-9xl animate-sliding-left"
+      class="font-['JetBrains Mono'] relative mt-3 flex min-h-screen animate-sliding-left flex-col justify-start gap-10 px-4 align-middle text-4xl font-light lg:mt-12 lg:text-9xl"
     >
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="cursor-pointer hover:ml-6 duration-700"
+        class="cursor-pointer duration-700 hover:ml-6"
         on:mouseenter={() => {
           hoverHome = true;
         }}
@@ -60,7 +60,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer hover:ml-6 duration-700"
+        class="flex cursor-pointer duration-700 hover:ml-6"
         on:mouseenter={() => {
           hoverProduct = true;
         }}
@@ -85,7 +85,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer hover:ml-6 duration-700"
+        class="flex cursor-pointer duration-700 hover:ml-6"
         on:mouseenter={() => {
           hoverJoin = true;
         }}
@@ -107,7 +107,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer hover:ml-6 duration-700"
+        class="flex cursor-pointer duration-700 hover:ml-6"
         on:mouseenter={() => {
           hoverContact = true;
         }}
