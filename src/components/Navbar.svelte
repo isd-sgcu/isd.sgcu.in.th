@@ -46,7 +46,7 @@
           hoverHome = false;
         }}
       >
-        <a href="/home" class="flex {hoverHome ? 'hover-home' : ''}">
+        <a href="/home" class="flex {hoverHome ? 'hover-menu' : ''}">
           <img
             src={RIGHT_ARROW}
             alt=""
@@ -68,19 +68,19 @@
           hoverProduct = false;
         }}
       >
-        <a href="/project" class="flex">
+        <a href="/project" class="flex {hoverProduct ? 'hover-menu' : ''}">
           <img
             src={RIGHT_ARROW}
             alt=""
             class={hoverProduct ? "block" : "hidden"}
           />
-          <p class={hoverProduct ? "-scale-x-100 duration-700" : ""}>P</p>
-          <p class={hoverProduct ? "-scale-x-100 duration-700" : ""}>R</p>
-          <p class={hoverProduct ? "-scale-x-100 duration-700" : ""}>O</p>
-          <p class={hoverProduct ? "-scale-x-100 duration-700" : ""}>J</p>
-          <p class={hoverProduct ? "-scale-x-100 duration-700" : ""}>E</p>
-          <p class={hoverProduct ? "-scale-x-100 duration-700" : ""}>C</p>
-          <p class={hoverProduct ? "-scale-x-100 duration-700" : ""}>T</p>
+          <p>P</p>
+          <p>R</p>
+          <p>O</p>
+          <p>J</p>
+          <p>E</p>
+          <p>C</p>
+          <p>T</p>
         </a>
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -93,16 +93,16 @@
           hoverJoin = false;
         }}
       >
-        <a href="/join" class="flex">
+        <a href="/join" class="flex {hoverJoin ? 'hover-menu' : ''}">
           <img
             src={RIGHT_ARROW}
             alt=""
             class={hoverJoin ? "block" : "hidden"}
           />
-          <p class={hoverJoin ? "-scale-x-100 duration-700" : ""}>J</p>
-          <p class={hoverJoin ? "-scale-x-100 duration-700" : ""}>O</p>
-          <p class={hoverJoin ? "-scale-x-100 duration-700" : ""}>I</p>
-          <p class={hoverJoin ? "-scale-x-100 duration-700" : ""}>N</p>
+          <p>J</p>
+          <p>O</p>
+          <p>I</p>
+          <p>N</p>
         </a>
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -115,19 +115,19 @@
           hoverContact = false;
         }}
       >
-        <a href="/contact" class="flex">
+        <a href="/contact" class="flex {hoverContact ? 'hover-menu' : ''} ">
           <img
             src={RIGHT_ARROW}
             alt=""
             class={hoverContact ? "block" : "hidden"}
           />
-          <p class={hoverContact ? "-scale-x-100 duration-700" : ""}>C</p>
-          <p class={hoverContact ? "-scale-x-100 duration-700" : ""}>O</p>
-          <p class={hoverContact ? "-scale-x-100 duration-700" : ""}>N</p>
-          <p class={hoverContact ? "-scale-x-100 duration-700" : ""}>T</p>
-          <p class={hoverContact ? "-scale-x-100 duration-700" : ""}>A</p>
-          <p class={hoverContact ? "-scale-x-100 duration-700" : ""}>C</p>
-          <p class={hoverContact ? "-scale-x-100 duration-700" : ""}>T</p>
+          <p>C</p>
+          <p>O</p>
+          <p>N</p>
+          <p>T</p>
+          <p>A</p>
+          <p>C</p>
+          <p>T</p>
         </a>
       </div>
     </div>
@@ -135,7 +135,7 @@
 </nav>
 
 <style lang="postcss">
-  .hover-home > p {
+  .hover-menu > p {
     @apply -scale-x-100 duration-700;
   }
 </style>
