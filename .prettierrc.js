@@ -11,8 +11,8 @@ const config = {
   plugins: [
     "prettier-plugin-astro",
     "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss",
     "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss",
   ],
   overrides: [
     {
