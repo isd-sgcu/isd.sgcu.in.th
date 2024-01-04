@@ -38,10 +38,13 @@ const projects = [
 ---
 
 <Layout title="Projects">
-  <main class="min-h-screen bg-[#0f0f0f] text-white">
-    <!-- Navbar -->
-    <div class="flex flex-col">
-      <h1 class="ml-[40px] flex flex-none pt-3 text-3xl font-bold">Project</h1>
+  <main class="flex min-h-screen w-full items-center bg-[#0f0f0f] text-white">
+    <div class="hidden flex-col md:flex">
+      <h1 class="ml-[40px] flex text-4xl font-bold">Project</h1>
+      <ProjectContainer projects={projects} client:load />
+    </div>
+    <div class="flex flex-col md:hidden">
+      <h1 class="font-semi ml-[40px] flex text-5xl">Project</h1>
       <ProjectContainer projects={projects} client:load />
     </div>
   </main>
