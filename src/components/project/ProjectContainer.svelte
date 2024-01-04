@@ -8,7 +8,7 @@
     }
     if (hoverIndex == -1) return;
     projectElements[hoverIndex].style.filter = `grayscale(0%)`;
-    projectElements[hoverIndex].style.transform = `scale(1.05)`;
+    projectElements[hoverIndex].style.transform = `scale(1)`;
   }
 
   function handleScroll() {
@@ -56,11 +56,11 @@
             src={`/project/${project.image}`}
             alt={project.title}
             class={`duration-300 ease-in-out ${
-              idx % 2 == 0 ? "h-[40vh] md:h-[60vh]" : " h-[25vh] md:h-[40vh]"
+              idx % 2 == 0 ? "h-[40vh] md:h-[60vh]" : "h-[25vh] md:h-[40vh]"
             } project z-0`}
             on:mouseover={() => {
               hoverIndex = idx;
-              applyHoverEffect(100, 0.95);
+              applyHoverEffect(100, 0.9);
             }}
             on:mouseout={() => {
               hoverIndex = -1;
@@ -68,7 +68,7 @@
             }}
             on:focus={() => {
               hoverIndex = idx;
-              applyHoverEffect(100, 0.95);
+              applyHoverEffect(100, 0.9);
             }}
             on:blur={() => {
               hoverIndex = -1;
@@ -79,7 +79,7 @@
       {/each}
     </div>
   </div>
-  <div class="ml-[40px] mr-[40px] mt-5">
+  <div class="ml-[40px] mr-[40px] mt-3">
     <div class="flex h-1 w-full flex-row">
       <div class="h-1 bg-white" bind:this={progress}></div>
       <div class="h-1 w-full bg-gray-600" bind:this={remain}></div>
