@@ -34,11 +34,11 @@
 
   {#if open}
     <div
-      class="font-['JetBrains Mono'] relative mt-3 flex min-h-screen animate-sliding-left flex-col justify-start gap-10 px-4 align-middle text-4xl font-light lg:mt-12 lg:text-9xl"
+      class="font-['JetBrains Mono'] transfr relative mt-[33.33%] flex min-h-screen animate-sliding-left flex-col gap-10 px-4 align-middle text-4xl font-light lg:mt-12 lg:justify-start lg:text-9xl"
     >
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="cursor-pointer duration-700 hover:ml-6"
+        class="menu-container hover:ml-7"
         on:mouseenter={() => {
           hoverHome = true;
         }}
@@ -50,7 +50,7 @@
           <img
             src={RIGHT_ARROW}
             alt=""
-            class={hoverHome ? "block" : "hidden"}
+            class="h-9 lg:h-32 {hoverHome ? 'block' : 'hidden'}"
           />
           <p>H</p>
           <p>O</p>
@@ -60,7 +60,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer duration-700 hover:ml-6"
+        class="menu-container hover:ml-6"
         on:mouseenter={() => {
           hoverProduct = true;
         }}
@@ -72,7 +72,7 @@
           <img
             src={RIGHT_ARROW}
             alt=""
-            class={hoverProduct ? "block" : "hidden"}
+            class="h-9 lg:h-32 {hoverProduct ? 'block' : 'hidden'}"
           />
           <p>P</p>
           <p>R</p>
@@ -85,7 +85,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer duration-700 hover:ml-6"
+        class="menu-container hover:ml-6"
         on:mouseenter={() => {
           hoverJoin = true;
         }}
@@ -97,7 +97,7 @@
           <img
             src={RIGHT_ARROW}
             alt=""
-            class={hoverJoin ? "block" : "hidden"}
+            class="h-9 lg:h-32 {hoverJoin ? 'block' : 'hidden'}"
           />
           <p>J</p>
           <p>O</p>
@@ -107,7 +107,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer duration-700 hover:ml-6"
+        class="menu-container hover:ml-6"
         on:mouseenter={() => {
           hoverContact = true;
         }}
@@ -119,7 +119,7 @@
           <img
             src={RIGHT_ARROW}
             alt=""
-            class={hoverContact ? "block" : "hidden"}
+            class="h-9 lg:h-32 {hoverContact ? 'block' : 'hidden'}"
           />
           <p>C</p>
           <p>O</p>
@@ -135,6 +135,9 @@
 </nav>
 
 <style lang="postcss">
+  .menu-container {
+    @apply flex cursor-pointer items-center duration-700;
+  }
   .hover-menu > p {
     @apply -scale-x-100 duration-700;
   }
