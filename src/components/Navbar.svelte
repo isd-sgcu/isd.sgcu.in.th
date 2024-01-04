@@ -46,7 +46,7 @@
           hoverHome = false;
         }}
       >
-        <a href="/home" class="flex {hoverHome ? 'hover-menu' : ''}">
+        <a href="/" class="flex {hoverHome ? 'hover-menu' : ''}">
           <img
             src={RIGHT_ARROW}
             alt=""
