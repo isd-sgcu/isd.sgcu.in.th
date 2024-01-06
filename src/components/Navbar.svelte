@@ -11,7 +11,7 @@
   let RIGHT_ARROW = "src/assets/navbar/rightArrow.png";
 </script>
 
-<nav id="nav" class="fixed w-full bg-stone-950 px-4 text-white lg:px-10">
+<nav id="nav" class="fixed z-50 w-full bg-stone-950 px-4 text-white lg:px-10">
   <div class="bg-blue flex justify-between py-4">
     <img src={SGCU} alt="pic" class="h-8 lg:h-24" />
     <div class="flex flex-row items-center">
