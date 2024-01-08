@@ -5,13 +5,13 @@
   let hoverJoin = false;
   let hoverContact = false;
 
-  const SGCU = "src/assets/navbar/logo-sgcu.svg";
-  let MENU_HAMBURGER = "src/assets/navbar/menu-idle.svg";
-  let MENU_CLOSE = "src/assets/navbar/menu-close.svg";
-  let RIGHT_ARROW = "src/assets/navbar/rightArrow.png";
+  const SGCU = "./navbar/logo-sgcu.svg";
+  const MENU_OPEN = "./navbar/menu-open.svg";
+  const MENU_CLOSE = "./navbar/menu-close.svg";
+  const RIGHT_ARROW = "./navbar/rightArrow.png";
 </script>
 
-<nav id="nav" class="fixed z-50 w-full bg-stone-950 px-4 text-white lg:px-10">
+<nav id="nav" class="fixed z-50 w-full bg-primary px-4 text-white lg:px-10">
   <div class="bg-blue flex justify-between py-4">
     <img src={SGCU} alt="pic" class="h-8 lg:h-24" />
     <div class="flex flex-row items-center">
@@ -26,7 +26,7 @@
         {#if open}
           <img src={MENU_CLOSE} alt="" class="h-8 lg:h-12" />
         {:else}
-          <img src={MENU_HAMBURGER} alt="" class="h-8 lg:h-12" />
+          <img src={MENU_OPEN} alt="" class="h-8 lg:h-12" />
         {/if}
       </button>
     </div>
@@ -34,7 +34,7 @@
 
   {#if open}
     <div
-      class="font-['JetBrains Mono'] transfr relative mt-[33.33%] flex min-h-screen animate-sliding-left flex-col gap-10 px-4 align-middle text-4xl font-light lg:mt-12 lg:justify-start lg:text-9xl"
+      class="font-['JetBrains Mono'] transfrom relative mt-[33.33%] flex min-h-screen animate-sliding-left flex-col gap-10 px-4 align-middle text-4xl font-light lg:mt-12 lg:justify-start lg:text-9xl"
     >
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
