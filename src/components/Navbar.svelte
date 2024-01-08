@@ -1,22 +1,22 @@
 <script lang="ts">
   let open = false;
   let hoverHome = false;
-  let hoverProduct = false;
+  let hoverProject = false;
   let hoverJoin = false;
   let hoverContact = false;
 
-  const SGCU = "src/assets/navbar/logo-sgcu.svg";
-  let MENU_HAMBURGER = "src/assets/navbar/menu-idle.svg";
-  let MENU_CLOSE = "src/assets/navbar/menu-close.svg";
-  let RIGHT_ARROW = "src/assets/navbar/rightArrow.png";
+  const SGCU = "./navbar/logo-sgcu.svg";
+  const MENU_HAMBURGER = "./navbar/menu-idle.svg";
+  const MENU_CLOSE = "./navbar/menu-close.svg";
+  const RIGHT_ARROW = "./navbar/rightArrow.png";
 </script>
 
-<nav id="nav" class="fixed w-full bg-stone-950 px-4 text-white lg:px-10">
+<nav id="nav" class="fixed w-full bg-primary px-4 text-white lg:px-10">
   <div class="bg-blue flex justify-between py-4">
     <img src={SGCU} alt="pic" class="h-8 lg:h-24" />
     <div class="flex flex-row items-center">
       <p class="font-['Space Grotesk'] mr-2 text-base font-light lg:mr-6">
-        Menu
+        MENU
       </p>
       <button
         on:click={() => {
@@ -34,11 +34,11 @@
 
   {#if open}
     <div
-      class="font-['JetBrains Mono'] relative mt-3 flex min-h-screen animate-sliding-left flex-col justify-start gap-10 px-4 align-middle text-4xl font-light lg:mt-12 lg:text-9xl"
+      class="font-['JetBrains Mono'] relative mt-[30%] flex min-h-screen animate-sliding-left flex-col justify-start gap-10 px-4 align-middle text-4xl font-light lg:mt-12 lg:text-9xl"
     >
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="cursor-pointer duration-700 hover:ml-6"
+        class="menu-container hover:ml-6"
         on:mouseenter={() => {
           hoverHome = true;
         }}
@@ -50,7 +50,7 @@
           <img
             src={RIGHT_ARROW}
             alt=""
-            class={hoverHome ? "block" : "hidden"}
+            class="w-9 lg:w-32 {hoverHome ? 'block' : 'hidden'}"
           />
           <p>H</p>
           <p>O</p>
@@ -60,19 +60,19 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer duration-700 hover:ml-6"
+        class="menu-container hover:ml-6"
         on:mouseenter={() => {
-          hoverProduct = true;
+          hoverProject = true;
         }}
         on:mouseleave={() => {
-          hoverProduct = false;
+          hoverProject = false;
         }}
       >
-        <a href="/project" class="flex {hoverProduct ? 'hover-menu' : ''}">
+        <a href="/project" class="flex {hoverProject ? 'hover-menu' : ''}">
           <img
             src={RIGHT_ARROW}
             alt=""
-            class={hoverProduct ? "block" : "hidden"}
+            class="w-9 lg:w-32 {hoverProject ? 'block' : 'hidden'}"
           />
           <p>P</p>
           <p>R</p>
@@ -85,7 +85,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer duration-700 hover:ml-6"
+        class="menu-container hover:ml-6"
         on:mouseenter={() => {
           hoverJoin = true;
         }}
@@ -97,7 +97,7 @@
           <img
             src={RIGHT_ARROW}
             alt=""
-            class={hoverJoin ? "block" : "hidden"}
+            class="w-9 lg:w-32 {hoverJoin ? 'block' : 'hidden'}"
           />
           <p>J</p>
           <p>O</p>
@@ -107,7 +107,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        class="flex cursor-pointer duration-700 hover:ml-6"
+        class="menu-container hover:ml-6"
         on:mouseenter={() => {
           hoverContact = true;
         }}
@@ -119,7 +119,7 @@
           <img
             src={RIGHT_ARROW}
             alt=""
-            class={hoverContact ? "block" : "hidden"}
+            class="w-9 lg:w-32 {hoverContact ? 'block' : 'hidden'}"
           />
           <p>C</p>
           <p>O</p>
@@ -137,5 +137,8 @@
 <style lang="postcss">
   .hover-menu > p {
     @apply -scale-x-100 duration-700;
+  }
+  .menu-container {
+    @apply flex cursor-pointer flex-row duration-500;
   }
 </style>

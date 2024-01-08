@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        primary: "#0F0F0F",
+      },
       keyframes: {
         slideLeft: {
           "0%": { transform: "translateX(-100%)" },
