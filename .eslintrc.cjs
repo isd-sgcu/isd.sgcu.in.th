@@ -12,6 +12,7 @@ const config = {
     "plugin:astro/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:svelte/recommended",
   ],
   overrides: [
     {
@@ -28,6 +29,17 @@ const config = {
       rules: {
         // override/add rules settings here, such as:
         // "astro/no-set-html-directive": "error"
+      },
+    },
+    {
+      files: ["*.svelte"],
+      parser: "svelte-eslint-parser",
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+      },
+      rules: {
+        // Have issues
+        "no-undef": "off",
       },
     },
   ],

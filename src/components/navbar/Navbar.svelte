@@ -8,8 +8,6 @@
   let hoverProject = false;
   let hoverJoin = false;
   let hoverContact = false;
-
-  const RIGHT_ARROW = "./navbar/rightArrow.png";
 </script>
 
 <nav id="nav" class="z-50 w-full bg-primary px-4 text-white lg:px-10">
