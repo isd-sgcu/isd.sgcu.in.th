@@ -2,7 +2,7 @@
   "name": "isd.sgcu.in.th",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@8.14.0",
+  "packageManager": "pnpm@8.14.1",
   "engines": {
     "node": "^20.9",
     "pnpm": "^8"
@@ -17,21 +17,21 @@
     "format": "prettier --write \"*.{json,cjs,js,mjs,md}\" src && eslint src --fix"
   },
   "dependencies": {
-    "@astrojs/check": "0.3.4",
+    "@astrojs/check": "0.4.1",
     "@astrojs/svelte": "5.0.3",
     "@astrojs/tailwind": "5.1.0",
     "@fontsource-variable/space-grotesk": "5.0.16",
     "@fontsource/noto-sans-thai-looped": "5.0.8",
-    "astro": "4.1.1",
+    "astro": "4.1.2",
     "sharp": "0.33.1",
     "svelte": "4.2.8",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3"
   },
   "devDependencies": {
-    "@types/eslint": "8.56.1",
-    "@typescript-eslint/eslint-plugin": "6.18.0",
-    "@typescript-eslint/parser": "6.18.0",
+    "@types/eslint": "8.56.2",
+    "@typescript-eslint/eslint-plugin": "6.18.1",
+    "@typescript-eslint/parser": "6.18.1",
     "eslint": "8.56.0",
     "eslint-plugin-astro": "0.31.0",
     "eslint-plugin-jsx-a11y": "6.8.0",
