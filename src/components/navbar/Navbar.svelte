@@ -10,7 +10,7 @@
   let hoverContact = false;
 </script>
 
-<nav id="nav" class="z-50 w-full bg-primary px-4 text-white lg:px-10">
+<nav id="nav" class="fixed z-50 w-full bg-primary px-4 text-white lg:px-10">
   <div class="bg-blue flex items-center justify-between py-4">
     <LogoSgcu
       classProps="flex justify-start relative w-5 h-8 lg:h-24 lg:w-14"
