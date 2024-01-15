@@ -1,6 +1,6 @@
-<script>
-  export let classProps;
-  export let isOpen;
+<script lang="ts">
+  export let classProps: string;
+  export let isOpen: boolean;
 </script>
 
 {#if isOpen}

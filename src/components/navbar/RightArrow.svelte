@@ -1,5 +1,5 @@
-<script>
-  export let classProps;
+<script lang="ts">
+  export let classProps: string;
 </script>
 
 <svg
