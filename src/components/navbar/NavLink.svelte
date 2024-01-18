@@ -1,5 +1,5 @@
 <script lang="ts">
-    import RightArrow from "./RightArrow.svelte";
+  import RightArrow from "./RightArrow.svelte";
 
   export let direct: string;
   let hoverText = false;
@@ -15,16 +15,18 @@
   }}
 >
   <a
-    href="/{ direct === "home" ? "" : direct}"
+    href="/{direct === 'home' ? '' : direct}"
     class="flex cursor-pointer items-center duration-700 hover:ml-4"
   >
     <RightArrow
-      classProps="h-9 w-9 lg:h-32 lg:w-32 {hoverText ? 'block' : 'block'}"
+      classProps="h-9 w-9 lg:h-32 lg:w-32 {hoverText ? 'block' : 'hidden'}"
     />
     {#each direct as character}
-      <div class=" text-4xl lg:text-9xl {hoverText
-        ? '-scale-x-100 duration-700 hover:ml-4'
-        : ''}">
+      <div
+        class=" text-4xl lg:text-9xl {hoverText
+          ? '-scale-x-100 duration-700'
+          : ''}"
+      >
         {character.toUpperCase()}
       </div>
     {/each}
