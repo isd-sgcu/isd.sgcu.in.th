@@ -1,17 +1,13 @@
 <script lang="ts">
   import Menu from "./Menu.svelte";
   import LogoSgcu from "./LogoSGCU.svelte";
-  import RightArrow from "./RightArrow.svelte";
+  import NavLink from "./NavLink.svelte"
 
   let open = false;
-  let hoverHome = false;
-  let hoverProject = false;
-  let hoverJoin = false;
-  let hoverContact = false;
 </script>
 
-<nav id="nav" class="fixed z-50 w-full bg-primary px-4 text-white lg:px-10">
-  <div class="bg-blue flex items-center justify-between py-4">
+<nav id="nav" class="w-screen z-[8000] text-white bg-primary {open ? 'h-screen fixed' : ''}">
+  <div class="flex sticky w-full items-center justify-between py-4 bg-primary px-4 lg:px-10">
     <LogoSgcu
       classProps="flex justify-start relative w-5 h-8 lg:h-24 lg:w-14"
     />
@@ -29,119 +25,12 @@
 
   {#if open}
     <div
-      class="transfrom relative mt-[30%] flex min-h-screen animate-sliding-left flex-col gap-10 px-4 align-middle text-4xl font-light lg:mt-12 lg:justify-start lg:text-9xl"
+      class="flex px-10 pb-10 fixed flex-col items-start mt-[30%] w-screen h-screen gap-10 animate-sliding-left"
     >
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        on:mouseenter={() => {
-          hoverHome = true;
-        }}
-        on:mouseleave={() => {
-          hoverHome = false;
-        }}
-      >
-        <a
-          href="/"
-          class="menu-container {hoverHome ? 'hover-menu hover:ml-4' : ''}"
-        >
-          <RightArrow
-            classProps="h-9 w-9 lg:h-32 lg:w-32 {hoverHome
-              ? 'block'
-              : 'hidden'}"
-          />
-          <p>H</p>
-          <p>O</p>
-          <p>M</p>
-          <p>E</p>
-        </a>
-      </div>
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        on:mouseenter={() => {
-          hoverProject = true;
-        }}
-        on:mouseleave={() => {
-          hoverProject = false;
-        }}
-      >
-        <a
-          href="/project"
-          class="menu-container {hoverProject ? 'hover-menu hover:ml-4' : ''}"
-        >
-          <RightArrow
-            classProps="h-9 w-9 lg:h-32 lg:w-32 {hoverProject
-              ? 'block'
-              : 'hidden'}"
-          />
-          <p>P</p>
-          <p>R</p>
-          <p>O</p>
-          <p>J</p>
-          <p>E</p>
-          <p>C</p>
-          <p>T</p>
-        </a>
-      </div>
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        on:mouseenter={() => {
-          hoverJoin = true;
-        }}
-        on:mouseleave={() => {
-          hoverJoin = false;
-        }}
-      >
-        <a
-          href="/join"
-          class="menu-container {hoverJoin ? 'hover-menu hover:ml-4' : ''}"
-        >
-          <RightArrow
-            classProps="h-9 w-9 lg:h-32 lg:w-32 {hoverJoin
-              ? 'block'
-              : 'hidden'}"
-          />
-          <p>J</p>
-          <p>O</p>
-          <p>I</p>
-          <p>N</p>
-        </a>
-      </div>
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        on:mouseenter={() => {
-          hoverContact = true;
-        }}
-        on:mouseleave={() => {
-          hoverContact = false;
-        }}
-      >
-        <a
-          href="/contact"
-          class="menu-container {hoverContact ? 'hover-menu hover:ml-4' : ''}"
-        >
-          <RightArrow
-            classProps="h-9 w-9 lg:h-32 lg:w-32 {hoverContact
-              ? 'block'
-              : 'hidden'}"
-          />
-          <p>C</p>
-          <p>O</p>
-          <p>N</p>
-          <p>T</p>
-          <p>A</p>
-          <p>C</p>
-          <p>T</p>
-        </a>
-      </div>
+      <NavLink direct="home"/>
+      <NavLink direct="project"/>
+      <NavLink direct="join"/>
+      <NavLink direct="contact"/>
     </div>
   {/if}
 </nav>
-
-<style lang="postcss">
-  .menu-container {
-    @apply flex cursor-pointer items-center duration-700;
-  }
-  .hover-menu > p {
-    @apply -scale-x-100 duration-700;
-  }
-</style>
