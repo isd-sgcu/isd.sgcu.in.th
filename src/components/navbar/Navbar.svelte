@@ -8,11 +8,13 @@
 
 <nav
   id="nav"
-  class="m-0 w-screen z-[4000] bg-primary text-white {open ? 'fixed h-screen' : ''}"
+  class="z-[4000] m-0 w-screen bg-primary text-white {open
+    ? 'fixed h-screen'
+    : ''}"
 >
   <div class="bg-primary">
     <div
-      class=" flex w-full z-[8000] items-center justify-between px-4 py-4 lg:px-10 {open
+      class=" z-[8000] flex w-full items-center justify-between px-4 py-4 lg:px-10 {open
         ? 'fixed'
         : 'sticky'}"
     >
@@ -32,7 +34,7 @@
     </div>
     {#if open}
       <div
-        class="fixed flex h-full w-full animate-sliding-left flex-col items-start justify-center gap-10 px-10 lg:my-10 font-['JetBrains Mono']"
+        class="font-['JetBrains Mono'] fixed flex h-full w-full animate-sliding-left flex-col items-start justify-center gap-10 px-10 lg:my-10"
       >
         <NavLink direct="home" />
         <NavLink direct="project" />
