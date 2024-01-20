@@ -2,8 +2,49 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Home" description="Home">
-  <main class="flex h-screen flex-col items-center justify-center">
-    <h1 class="text-3xl font-bold">Hello Astro</h1>
-  </main>
+<Layout title="ISD SGCU" description="Main page">
+  <section
+    class="flex h-screen w-screen -translate-y-12 flex-col items-center justify-center bg-gradient-to-b from-black to-indigo-950 text-4xl font-bold text-white md:text-6xl lg:-translate-y-32"
+  >
+    <div
+      class="invisible absolute left-64 top-44 h-24 w-24 rounded-full bg-pink-600 sm:visible lg:h-36 lg:w-36"
+    >
+    </div>
+    <div
+      class="invisible absolute right-0 top-32 h-[600px] w-[300px] rounded-bl-full border-l-[45px] border-blue-700 sm:visible lg:h-[221px] lg:w-[260px]"
+    >
+    </div>
+    <span class="grid place-content-center"> </span>
+    <p class="leading-[120px] tracking-wide">Information System</p><p>
+      Development
+    </p>
+    <div
+      class="invisible absolute bottom-0 right-0 h-72 w-36 rounded-l-full bg-pink-600 sm:visible"
+    >
+    </div>
+    <div
+      class="invisible absolute bottom-0 left-0 h-80 w-48 rounded-tr-full border-r-[35px] border-indigo-800 sm:visible md:w-60 lg:w-80"
+    >
+    </div>
+    <div
+      class="invisible absolute bottom-0 right-1/4 h-36 w-72 rounded-t-full border-t-[22px] border-blue-700 sm:visible"
+    >
+    </div>
+  </section>
+  <section
+    class="absolute flex h-screen w-screen -translate-y-12 flex-col items-center justify-center bg-black lg:-translate-y-32"
+  >
+    <img src="./src/assets/isd_logo.svg" class="w-60 lg:w-80" alt="logo" />
+    <div
+      class="flex max-w-xl flex-col items-center justify-center text-center text-white"
+    >
+      <p class="my-12 text-4xl font-bold">What is ISD?</p>
+      <p class="text-md">
+        ฝ่ายพัฒนาระบบสารสนเทศ (Information System Development - ISD)
+        เป็นฝ่ายภายใต้องค์การบริหารสโมสรนิสิตจุฬาฯ (อบจ.) ที่มีหน้าที่ร่วมมือกับ
+        อบจ. และองค์กรต่าง ๆ ในจุฬาฯ เพื่อพัฒนาระบบเว็บไซต์ แอปพลิเคชัน
+        และระบบสารสนเทศอื่น ๆ ที่อำนวยความสะดวก และเป็นประโยชน์ต่อนิสิตจุฬาฯ
+      </p>
+    </div>
+  </section>
 </Layout>
