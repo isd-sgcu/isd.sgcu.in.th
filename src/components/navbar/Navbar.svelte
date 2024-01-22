@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Menu from "./Menu.svelte";
   import LogoSgcu from "./LogoSGCU.svelte";
+  import Menu from "./Menu.svelte";
   import NavLink from "./NavLink.svelte";
 
   let open = false;
