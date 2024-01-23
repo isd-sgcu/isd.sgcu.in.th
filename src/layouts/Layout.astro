@@ -21,7 +21,7 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title} | ISD SGCU</title>
   </head>
-  <body>
+  <body class="min-h-screen bg-primary">
     <Navbar client:load />
     <slot />
   </body>

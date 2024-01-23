@@ -6,34 +6,36 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Contact" description="Contact">
-  <main
-    class="min-h-screen w-full items-center justify-center overflow-hidden bg-[#0F0F0F] px-[8%] py-7 lg:px-[3%] lg:py-12"
-  >
-    <p class="animate-sliding-left text-2xl font-bold text-white lg:text-4xl">
-      Contact
-    </p>
-    <div class="mt-7 grid place-items-stretch lg:mt-16 lg:grid-cols-2">
-      <div class="flex justify-center lg:justify-start">
-        <Image
-          class="w-[55%] animate-sliding-right rounded-full lg:w-[80%] lg:animate-sliding-left"
-          src={isdlogo}
-          alt="isd-logo"
-        />
-      </div>
-
-      <div
-        class="flex animate-sliding-right flex-col space-y-48 pt-20 text-right lg:h-full lg:justify-between lg:space-y-0 lg:py-10"
-      >
-        <div
-          class="space-y-4 text-xl font-light text-white lg:space-y-12 lg:text-4xl"
-        >
-          <p>xxxxxxxx@gmail.com</p>
-          <p>Instagram</p>
+  <main class="relative top-0">
+    <div
+      class="min-h-screen w-full items-center justify-center overflow-hidden bg-[#0F0F0F] px-[8%] py-7 lg:px-[3%] lg:py-12"
+    >
+      <p class="animate-sliding-left text-2xl font-bold text-white lg:text-4xl">
+        Contact
+      </p>
+      <div class="mt-7 grid place-items-stretch lg:mt-16 lg:grid-cols-2">
+        <div class="flex justify-center lg:justify-start">
+          <Image
+            class="w-[55%] animate-sliding-right rounded-full lg:w-[80%] lg:animate-sliding-left"
+            src={isdlogo}
+            alt="isd-logo"
+          />
         </div>
+
         <div
-          class="whitespace-pre-line text-6xl font-bold tracking-[.64rem] text-white lg:text-8xl"
+          class="flex animate-sliding-right flex-col space-y-48 pt-20 text-right lg:h-full lg:justify-between lg:space-y-0 lg:py-10"
         >
-          {"Get In\nTouch"}
+          <div
+            class="space-y-4 text-xl font-light text-white lg:space-y-12 lg:text-4xl"
+          >
+            <p>xxxxxxxx@gmail.com</p>
+            <p>Instagram</p>
+          </div>
+          <div
+            class="whitespace-pre-line text-6xl font-bold tracking-[.64rem] text-white lg:text-8xl"
+          >
+            {"Get In\nTouch"}
+          </div>
         </div>
       </div>
     </div>
