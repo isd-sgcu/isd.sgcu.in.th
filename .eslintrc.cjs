@@ -13,7 +13,21 @@ const config = {
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:svelte/recommended",
+    "plugin:import/recommended",
   ],
+  rules: {
+    "import/no-unresolved": "off",
+  },
+  settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"],
+    },
+    "import/resolver": {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
+  },
   overrides: [
     {
       // Define the configuration for `.astro` file.
