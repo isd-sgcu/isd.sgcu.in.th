@@ -14,13 +14,11 @@
 >
   <div class="bg-primary">
     <div
-      class=" z-[8000] flex w-full items-center justify-between px-4 py-4 lg:px-10 {open
+      class="z-[8000] flex w-full items-center justify-between bg-primary px-4 py-4 lg:px-10 {open
         ? 'fixed'
         : 'sticky'}"
     >
-      <LogoSgcu
-        classProps="flex justify-start relative w-5 h-8 lg:h-24 lg:w-14"
-      />
+      <LogoSgcu classProps="flex justify-start relative h-8 lg:h-12" />
       <div class="flex flex-row items-center">
         <p class="mr-2 text-base font-light lg:mr-6">Menu</p>
         <button

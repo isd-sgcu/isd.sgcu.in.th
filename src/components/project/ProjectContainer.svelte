@@ -36,7 +36,7 @@
   });
 </script>
 
-<div>
+<section>
   <div class="flex h-full flex-auto">
     <div
       class="no-scrollbar mt-3 flex items-center gap-x-12 overflow-x-scroll overscroll-contain scroll-smooth whitespace-nowrap md:gap-x-20"
@@ -45,8 +45,8 @@
     >
       {#each projects as project, idx}
         <button
-          class={`shrink-0 ${idx == 0 ? "ml-[40px]" : ""} ${
-            idx == projects.length - 1 ? "mr-[40px]" : ""
+          class={`shrink-0 translate-x-[40px] ${
+            idx == projects.length - 1 ? "pr-[40px]" : ""
           }`}
           on:click={() => {
             window.location.pathname = `project/${project.title}`;
@@ -85,7 +85,7 @@
       <div class="h-1 w-full bg-gray-600" bind:this={remain}></div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
   .no-scrollbar::-webkit-scrollbar {
