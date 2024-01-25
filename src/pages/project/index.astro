@@ -38,14 +38,14 @@ const projects = [
 ---
 
 <Layout title="Project" description="Project">
-  <main class="flex min-h-screen w-full items-center bg-[#0f0f0f] text-white">
-    <div class="hidden flex-col md:flex">
+  <main class="flex w-full items-center bg-primary text-white">
+    <div class="flex flex-col">
       <h1 class="ml-[40px] flex text-5xl font-extrabold">Project</h1>
       <ProjectContainer projects={projects} client:load />
     </div>
-    <div class="fixed flex-col md:hidden">
+    <!-- <div class="flex flex-col md:hidden">
       <h1 class="ml-[40px] flex text-5xl font-semibold">Project</h1>
       <ProjectContainer projects={projects} client:load />
-    </div>
+    </div> -->
   </main>
 </Layout>
