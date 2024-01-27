@@ -1,0 +1,168 @@
+[
+  {
+    "title": "CU Open House 2024",
+    "slug": "openhouse2024",
+    "time": "Dec - Jan 66",
+    "description": "",
+    "images": [],
+    "repo": []
+  },
+  {
+    "title": "isd.sgcu.in.th",
+    "slug": "isd-website",
+    "time": "Dec - Jan 66",
+    "description": "",
+    "images": [],
+    "repo": ["isd-sgcu/isd.sgcu.in.th"]
+  },
+  {
+    "title": "JohnJud",
+    "slug": "johnjud",
+    "time": "Nov - Feb 66",
+    "description": "",
+    "images": [],
+    "repo": []
+  },
+  {
+    "title": "Rub Puen Kao Mai 66",
+    "slug": "rpkm66",
+    "time": "Jun - Aug 66",
+    "description": "เว็บไซต์ลงทะเบียน ระบบเช็กอิน และระบบ E-Stamp สำหรับงานรับเพื่อนก้าวใหม่ 2566",
+    "images": ["rpkm66"],
+    "repo": [
+      "isd-sgcu/rpkm66-frontend",
+      "https://github.com/isd-sgcu/rpkm66-backend"
+    ]
+  },
+  {
+    "title": "CU Wander",
+    "slug": "cu-wander",
+    "time": "Feb - Apr 66",
+    "description": "Walk around Chulalongkorn University with CU Wander to gain points and redeem rewards with restaurants around Chulalongkorn University!",
+    "images": ["cu-wander"],
+    "repo": ["- https://github.com/isd-sgcu/cu-wander-frontend", "private"]
+  },
+  {
+    "title": "Rub Puen Kao Mai 65",
+    "slug": "rnkm65",
+    "time": "Mar - Aug 65",
+    "description": "เว็บไซต์ลงทะเบีัยน ระบบเช็กอิน และระบบ E-Stamp สำหรับงานรับเพื่อนก้าวใหม่ 2565",
+    "images": ["rnkm65"],
+    "repo": [
+      "https://github.com/isd-sgcu/rnkm65-frontend",
+      "https://github.com/isd-sgcu/rnkm65-backend"
+    ]
+  },
+  {
+    "title": "Freshy the Journey",
+    "slug": "freshy-the-journey",
+    "time": "Jun -  Aug 64",
+    "description": "Interactive Experience ที่พาน้อง ๆ walkthrough ประสบการณ์รับน้อง",
+    "images": [],
+    "repo": ["https://github.com/isd-sgcu/cu-the-journey"]
+  },
+  {
+    "title": "Club Mania",
+    "slug": "club-mania",
+    "time": "Jul - Aug 64",
+    "description": "เว็บรวบรวมชมรมภายใต้อบจ. ใช้ในงาน club mania",
+    "images": [],
+    "repo": [
+      "https://github.com/isd-sgcu/club-mania-backend\nhttps://github.com/isd-sgcu/club-mania-frontend"
+    ]
+  },
+  {
+    "title": "6 Oct",
+    "slug": "6-Oct",
+    "time": "Aug - Oct 64",
+    "description": "Interactive Experience เล่าเกี่ยวกับเหตุการณ์ 6 ตุลา",
+    "images": [],
+    "repo": ["https://github.com/isd-sgcu/6-oct-quiz"]
+  },
+  {
+    "title": "Loy Krathong 64",
+    "slug": "loy-krathong-64",
+    "time": "Aug - Nov 64",
+    "description": "mini game เก็บขยะในน้ำ แข่งขันกันแต่ละคณะ (คล้าย popcat.click)",
+    "images": [],
+    "repo": [
+      "https://github.com/isd-sgcu/loy-krathong-64-frontend\nhttps://github.com/isd-sgcu/loy-krathong-64-backend"
+    ]
+  },
+  {
+    "title": "CHU.in.th",
+    "slug": "chu-magazine",
+    "time": "Aug - Dec 64",
+    "description": "เว็บบทความของฝ่ายสาราณียกร",
+    "images": ["chu.in.th"],
+    "repo": [
+      "https://github.com/isd-sgcu/chu-magazine-backend\nhttps://github.com/isd-sgcu/chu-magazine-frontend"
+    ]
+  },
+  {
+    "title": "CU Welcome Fair\n(canceled due to covid)",
+    "slug": "",
+    "time": "",
+    "description": "เว็บเลือกบ้านรับน้อง",
+    "images": [],
+    "repo": []
+  },
+  {
+    "title": "Freshy the Series",
+    "slug": "freshy-the-series",
+    "time": "Jun - Aug 63",
+    "description": "เว็บเลือกบ้านรับน้อง",
+    "images": [
+      "https://www.facebook.com/chulafreshmen/posts/pfbid0TwduubUKi1T5wuARwGuszf5uHx9ygqH4KXvVPVxCnEi3rR9uz2ZL7kg3PUyEBq6Yl"
+    ],
+    "repo": []
+  },
+  {
+    "title": "CU Check In",
+    "slug": "cu-check-in",
+    "time": "Sep 63 - Jan 64",
+    "description": "ระบบจำกัดจำนวนคนในพื้นที่ ทำให้ผู้จัดโครงการรับรู้ว่ามีใครเข้ามาในพื้นที่บ้าง กี่คน พร้อมระบบ monitor จำนวน และ track คนที่เข้ามาในพื้นที่สำหรับกรณีแจ้งเตือน covid",
+    "images": [],
+    "repo": []
+  },
+  {
+    "title": "Loy Krathong 63",
+    "slug": "loy-krathong-63",
+    "time": "Sep - Oct 63",
+    "description": "เว็็บลอยกระทงออนไลน์ customize กระทงแล้วมาลอยใน public pool พร้อมข้อความสร้างสรรค์ และสามารถ export กระทงไป share ลง ig",
+    "images": [],
+    "repo": []
+  },
+  {
+    "title": "CU Get Ready",
+    "slug": "cu-get-ready",
+    "time": "Nov 63 - Mar 64",
+    "description": "เว็บประกอบโครงการ CU Get Ready รวบรวม content เกี่ยวกับเทคนิตการสมัครงาน การทำ resume และอื่น ๆ",
+    "images": [],
+    "repo": []
+  },
+  {
+    "title": "Voice of Chula",
+    "slug": "voice-of-chula",
+    "time": "Nov 63 - Apr 64",
+    "description": "แพลตฟอร์ม raise ประเด็นปัญหาภายในมหาวิทยาลัยที่เปิดโอกาสให้นิสิตสามารถมาแสดงความคิดเห็นได้ โดยมีการ authenticate ว่าเป็นนิสิตจุฬาจริง และมีการ update progress การตอบสนองต่อประเด็นต่าง ๆ จากผู้แทนนิสิต",
+    "images": [],
+    "repo": []
+  },
+  {
+    "title": "Rubnongkaomai 63 \n(canceled due to covid)",
+    "slug": "rnkm63",
+    "time": "Nov 63 - Jan 64",
+    "description": "เว็บเลือกบ้านรับน้อง",
+    "images": [],
+    "repo": []
+  },
+  {
+    "title": "CU Tracking\n(canceled due to covid)",
+    "slug": "cu-tracking",
+    "time": "",
+    "description": "ระบบ track movement ของผู้เข้าร่วมงานไปตามพื้นที่ต่าง ๆ ของงานรับน้องก้าวใหม่ ใช้ record ว่าน้องเดินไปจุดไหนบ้างเพื่อประเมินความเสี่ยง covid",
+    "images": [],
+    "repo": ["no code, just design"]
+  }
+]
