@@ -3,6 +3,21 @@ import Layout from "@/layouts/Layout.astro";
 
 import ISDLogo from "@/assets/isd_logo.svg";
 import { Image } from "astro:assets";
+import Members from "@/components/member/Members.svelte";
+
+const fetchOrgMembers = async () => {
+  try {
+    const res = await fetch(
+      "https://api.github.com/orgs/isd-sgcu/public_members",
+    );
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+const orgMembers= await fetchOrgMembers();
+console.log(orgMembers);
 ---
 
 <Layout title="Home" description="Main page">
@@ -48,6 +63,7 @@ import { Image } from "astro:assets";
         อบจ. และองค์กรต่าง ๆ ในจุฬาฯ เพื่อพัฒนาระบบเว็บไซต์ แอปพลิเคชัน
         และระบบสารสนเทศอื่น ๆ ที่อำนวยความสะดวก และเป็นประโยชน์ต่อนิสิตจุฬาฯ
       </p>
+      <Members orgMembers={orgMembers}/>
     </div>
   </section>
 </Layout>
