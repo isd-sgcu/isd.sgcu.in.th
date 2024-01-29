@@ -3,39 +3,58 @@ import Layout from "@/layouts/Layout.astro";
 
 import ISDLogo from "@/assets/isd_logo.svg";
 import { Image } from "astro:assets";
+import Members from "@/components/member/Members.svelte";
+
+const fetchOrgMembers = async () => {
+  try {
+    const res = await fetch(
+      "https://api.github.com/orgs/isd-sgcu/public_members",
+    );
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+const orgMembers = await fetchOrgMembers();
 ---
 
 <Layout title="Home" description="Main page">
   <section
-    class="flex h-screen w-screen -translate-y-12 flex-col items-center justify-center bg-gradient-to-b from-black to-indigo-950 text-4xl font-bold text-white md:text-6xl lg:-translate-y-32"
+    class="flex h-screen w-screen -translate-y-12 flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-black to-indigo-950 text-4xl font-bold text-white md:text-6xl lg:-translate-y-32"
   >
+    <!-- pink -->
     <div
-      class="invisible absolute left-64 top-44 h-24 w-24 rounded-full bg-pink-600 sm:visible lg:h-36 lg:w-36"
+      class="absolute left-16 top-16 aspect-square w-24 animate-sliding-left rounded-full bg-pink-600 duration-100 lg:left-32 lg:top-44"
     >
     </div>
     <div
-      class="invisible absolute right-0 top-32 h-[600px] w-[300px] rounded-bl-full border-l-[45px] border-blue-700 sm:visible lg:h-[221px] lg:w-[260px]"
+      class="duration-50 absolute -right-16 bottom-16 aspect-square w-32 animate-sliding-right rounded-full bg-pink-600 lg:-right-32 lg:bottom-0 lg:w-64"
     >
     </div>
+    <!-- blue -->
+    <div
+      class="absolute -right-32 -top-24 aspect-square h-[240px] animate-sliding-right rounded-full ring-[32px] ring-indigo-800 lg:-right-80 lg:-top-1/4 lg:h-[600px] lg:ring-[64px]"
+    >
+    </div>
+    <div
+      class="absolute -bottom-12 -left-16 aspect-square w-48 animate-sliding-left rounded-full ring-[32px] ring-indigo-800 sm:visible lg:-bottom-16 lg:-left-24 lg:w-64"
+    >
+    </div>
+    <div
+      class="absolute -bottom-8 right-[10%] aspect-square w-24 animate-sliding-up rounded-full ring-[12px] ring-blue-700 lg:-bottom-32 lg:right-1/4 lg:w-48 lg:ring-[28px]"
+    >
+    </div>
+    <!-- text -->
     <span class="grid place-content-center"> </span>
-    <p class="leading-[120px] tracking-wide">Information System</p><p>
+    <p class="z-10 leading-[120px] tracking-wide">Information System</p><p
+      class="z-10"
+    >
       Development
     </p>
-    <div
-      class="invisible absolute bottom-0 right-0 h-72 w-36 rounded-l-full bg-pink-600 sm:visible"
-    >
-    </div>
-    <div
-      class="invisible absolute bottom-0 left-0 h-80 w-48 rounded-tr-full border-r-[35px] border-indigo-800 sm:visible md:w-60 lg:w-80"
-    >
-    </div>
-    <div
-      class="invisible absolute bottom-0 right-1/4 h-36 w-72 rounded-t-full border-t-[22px] border-blue-700 sm:visible"
-    >
-    </div>
   </section>
   <section
-    class="absolute flex h-screen w-screen -translate-y-12 flex-col items-center justify-center bg-black lg:-translate-y-32"
+    class="flex h-screen w-screen -translate-y-12 flex-col items-center justify-center bg-black lg:-translate-y-32"
   >
     <Image src={ISDLogo} class="w-60 lg:w-80" alt="logo" />
     <div
@@ -50,4 +69,5 @@ import { Image } from "astro:assets";
       </p>
     </div>
   </section>
+  <Members members={orgMembers} />
 </Layout>
