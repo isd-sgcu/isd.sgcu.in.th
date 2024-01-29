@@ -16,8 +16,7 @@ const fetchOrgMembers = async () => {
     console.error(err);
   }
 };
-const orgMembers= await fetchOrgMembers();
-console.log(orgMembers);
+const orgMembers = await fetchOrgMembers();
 ---
 
 <Layout title="Home" description="Main page">
@@ -33,7 +32,9 @@ console.log(orgMembers);
     >
     </div>
     <span class="grid place-content-center"> </span>
-    <p class="leading-[120px] tracking-wide">Information System</p><p>
+    <p class="z-10 leading-[120px] tracking-wide">Information System</p><p
+      class="z-10"
+    >
       Development
     </p>
     <div
@@ -50,7 +51,7 @@ console.log(orgMembers);
     </div>
   </section>
   <section
-    class="absolute flex h-screen w-screen -translate-y-12 flex-col items-center justify-center bg-black lg:-translate-y-32"
+    class="flex h-screen w-screen -translate-y-12 flex-col items-center justify-center bg-black lg:-translate-y-32"
   >
     <Image src={ISDLogo} class="w-60 lg:w-80" alt="logo" />
     <div
@@ -63,7 +64,7 @@ console.log(orgMembers);
         อบจ. และองค์กรต่าง ๆ ในจุฬาฯ เพื่อพัฒนาระบบเว็บไซต์ แอปพลิเคชัน
         และระบบสารสนเทศอื่น ๆ ที่อำนวยความสะดวก และเป็นประโยชน์ต่อนิสิตจุฬาฯ
       </p>
-      <Members orgMembers={orgMembers}/>
     </div>
   </section>
+  <Members OrgMembers={orgMembers} />
 </Layout>
