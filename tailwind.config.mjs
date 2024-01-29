@@ -17,10 +17,16 @@ export default {
           "70%": { transform: "translateX(-2%)" },
           "100%": { transform: "translateX(0)" },
         },
+        slideUp: {
+          "0%": { transform: "translateY(100%)" },
+          "70%": { transform: "translateY(-2%)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "sliding-left": "slideLeft 1.5s",
         "sliding-right": "slideRight 1.5s",
+        "sliding-up": "slideUp 1.5s",
       },
     },
   },
