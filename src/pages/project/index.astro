@@ -1,40 +1,7 @@
 ---
 import ProjectContainer from "@/components/project/ProjectContainer.svelte";
 import Layout from "@/layouts/Layout.astro";
-const projects = [
-  {
-    title: "something-1",
-    image: "project-img.png",
-  },
-  {
-    title: "something-2",
-    image: "project-img.png",
-  },
-  {
-    title: "something-3",
-    image: "project-img.png",
-  },
-  {
-    title: "something-4",
-    image: "project-img.png",
-  },
-  {
-    title: "something-5",
-    image: "project-img.png",
-  },
-  {
-    title: "something-6",
-    image: "project-img.png",
-  },
-  {
-    title: "something-7",
-    image: "project-img.png",
-  },
-  {
-    title: "something-8",
-    image: "project-img.png",
-  },
-];
+import projects from "@/data/projects.json";
 ---
 
 <Layout title="Project" description="Project">
@@ -43,9 +10,5 @@ const projects = [
       <h1 class="ml-[40px] flex text-5xl font-extrabold">Project</h1>
       <ProjectContainer projects={projects} client:load />
     </div>
-    <!-- <div class="flex flex-col md:hidden">
-      <h1 class="ml-[40px] flex text-5xl font-semibold">Project</h1>
-      <ProjectContainer projects={projects} client:load />
-    </div> -->
   </main>
 </Layout>

@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
+  import Modal from "./Modal.svelte";
+
   function applyHoverEffect(percent: number, scale: number) {
     for (let i = 0; i < projectElements.length; ++i) {
       projectElements[i].style.filter = `grayscale(${percent}%)`;
@@ -22,14 +24,20 @@
 
   type IProject = {
     title: string;
-    image: string;
+    slug: string;
+    time: string;
+    description: string;
+    images: string[];
+    repo: string[];
   };
+
   export let projects: IProject[];
   let projectContainer: HTMLDivElement;
   let progress: HTMLDivElement;
   let remain: HTMLDivElement;
   let projectElements: NodeListOf<HTMLImageElement>;
   let hoverIndex: number = -1;
+  let showModal: boolean = false;
 
   onMount(() => {
     projectElements = document.querySelectorAll<HTMLImageElement>(".project");
@@ -49,11 +57,12 @@
             idx == projects.length - 1 ? "pr-[40px]" : ""
           }`}
           on:click={() => {
-            window.location.pathname = `project/${project.title}`;
+            window.location.pathname = `project/${project.slug}`;
+            // showModal = true;
           }}
         >
           <img
-            src={`/project/${project.image}`}
+            src={`/project/${project.images[0] ? project.images[0] : "rpkm66.png"}`}
             alt={project.title}
             class={`duration-300 ease-in-out ${
               idx % 2 == 0 ? "h-[40vh] md:h-[60vh]" : "h-[25vh] md:h-[40vh]"
@@ -76,6 +85,7 @@
             }}
           />
         </button>
+        <Modal bind:showModal>Test</Modal>
       {/each}
     </div>
   </div>

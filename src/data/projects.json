@@ -13,7 +13,7 @@
     "time": "Dec - Jan 66",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/isd.sgcu.in.th"]
+    "repo": ["https://github.com/isd-sgcu/isd.sgcu.in.th"]
   },
   {
     "title": "JohnJud",
@@ -28,9 +28,9 @@
     "slug": "rpkm66",
     "time": "Jun - Aug 66",
     "description": "เว็บไซต์ลงทะเบียน ระบบเช็กอิน และระบบ E-Stamp สำหรับงานรับเพื่อนก้าวใหม่ 2566",
-    "images": ["rpkm66"],
+    "images": ["rpkm66.png"],
     "repo": [
-      "isd-sgcu/rpkm66-frontend",
+      "https://github.com/isd-sgcu/rpkm66-frontend",
       "https://github.com/isd-sgcu/rpkm66-backend"
     ]
   },
@@ -129,7 +129,7 @@
     "title": "Loy Krathong 63",
     "slug": "loy-krathong-63",
     "time": "Sep - Oct 63",
-    "description": "เว็็บลอยกระทงออนไลน์ customize กระทงแล้วมาลอยใน public pool พร้อมข้อความสร้างสรรค์ และสามารถ export กระทงไป share ลง ig",
+    "description": "เว็บลอยกระทงออนไลน์ customize กระทงแล้วมาลอยใน public pool พร้อมข้อความสร้างสรรค์ และสามารถ export กระทงไป share ลง ig",
     "images": [],
     "repo": []
   },
