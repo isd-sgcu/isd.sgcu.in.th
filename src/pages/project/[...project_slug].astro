@@ -1,0 +1,58 @@
+---
+import projects from "@/data/projects.json";
+import Layout from "@/layouts/Layout.astro";
+
+type IProject = {
+  title: string;
+  slug: string;
+  time: string;
+  description: string;
+  images: string[];
+  repo: string[];
+};
+
+export function getStaticPaths() {
+  return projects.map((project: IProject) => ({
+    params: {
+      project_slug: project.slug,
+    },
+    props: {
+      project_title: project.title,
+      project_slug: project.slug,
+      project_description: project.description,
+      project_image: project.images,
+      project_repo: project.repo,
+    },
+  }));
+}
+
+const { project_slug } = Astro.params;
+const { project_title, project_description, project_image, project_repo } =
+  Astro.props;
+---
+
+<Layout title={project_slug} description={project_slug}>
+  <main class="min-h-screen w-full bg-primary px-10 pt-32 text-white">
+    <div class="animate-fade flex flex-col">
+      <h1 class="text-6xl font-semibold">{project_title}</h1>
+      <img
+        src={`/project/${project_image}`}
+        alt={project_title}
+        class="h-96 object-cover p-4"
+      />
+      <p class="text-2xl">{project_description}</p>
+      {
+        project_repo && (
+          <div class="flex flex-col py-3">
+            <h2 class="text-4xl font-semibold">Github</h2>
+            {project_repo.map((repo: string) => (
+              <a href={repo} class="text-2xl" target="_blank">
+                {repo}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </main>
+</Layout>

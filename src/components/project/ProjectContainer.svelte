@@ -38,6 +38,7 @@
   let projectElements: NodeListOf<HTMLImageElement>;
   let hoverIndex: number = -1;
   let showModal: boolean = false;
+  let selected_project: IProject = projects[0];
 
   onMount(() => {
     projectElements = document.querySelectorAll<HTMLImageElement>(".project");
@@ -57,12 +58,13 @@
             idx == projects.length - 1 ? "pr-[40px]" : ""
           }`}
           on:click={() => {
-            window.location.pathname = `project/${project.slug}`;
-            // showModal = true;
+            // window.location.pathname = `project/${project.slug}`;
+            selected_project = project;
+            showModal = true;
           }}
         >
           <img
-            src={`/project/${project.images[0] ? project.images[0] : "rpkm66.png"}`}
+            src={`/project/${project.images[0] ? "rpkm66.png" : "rpkm66.png"}`}
             alt={project.title}
             class={`duration-300 ease-in-out ${
               idx % 2 == 0 ? "h-[40vh] md:h-[60vh]" : "h-[25vh] md:h-[40vh]"
@@ -85,7 +87,6 @@
             }}
           />
         </button>
-        <Modal bind:showModal>Test</Modal>
       {/each}
     </div>
   </div>
@@ -95,6 +96,7 @@
       <div class="h-1 w-full bg-gray-600" bind:this={remain}></div>
     </div>
   </div>
+  <Modal bind:showModal {selected_project} />
 </section>
 
 <style>
