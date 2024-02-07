@@ -54,13 +54,44 @@
     >
       {#each projects as project, idx}
         <button
-          class={`shrink-0 translate-x-[40px] ${
+          class={`hidden shrink-0 translate-x-[40px] lg:flex ${
             idx == projects.length - 1 ? "pr-[40px]" : ""
           }`}
           on:click={() => {
-            // window.location.pathname = `project/${project.slug}`;
             selected_project = project;
             showModal = true;
+          }}
+        >
+          <img
+            src={`/project/${project.images[0] ? "rpkm66.png" : "rpkm66.png"}`}
+            alt={project.title}
+            class={`duration-300 ease-in-out ${
+              idx % 2 == 0 ? "h-[40vh] md:h-[60vh]" : "h-[25vh] md:h-[40vh]"
+            } project z-0`}
+            on:mouseover={() => {
+              hoverIndex = idx;
+              applyHoverEffect(100, 0.9);
+            }}
+            on:mouseout={() => {
+              hoverIndex = -1;
+              applyHoverEffect(0, 1);
+            }}
+            on:focus={() => {
+              hoverIndex = idx;
+              applyHoverEffect(100, 0.9);
+            }}
+            on:blur={() => {
+              hoverIndex = -1;
+              applyHoverEffect(0, 1);
+            }}
+          />
+        </button>
+        <button
+          class={`flex shrink-0 translate-x-[40px] lg:hidden ${
+            idx == projects.length - 1 ? "pr-[40px]" : ""
+          }`}
+          on:click={() => {
+            window.location.pathname = `project/${project.slug}`;
           }}
         >
           <img
