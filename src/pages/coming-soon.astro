@@ -1,0 +1,51 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="coming soon" description="Page not available!">
+  <main class="absolute top-0">
+    <div class="flex w-full items-center justify-center">
+      <div
+        class="flex h-screen w-screen flex-col items-center justify-center bg-primary px-[12%] md:px-0"
+      >
+        <div
+          class="stroke-width-2 flex flex-row justify-center text-5xl font-medium text-primary md:text-[10rem]"
+        >
+          <div class="stroke-white">C</div>
+          <div class="stroke-yellow">0</div>
+          <div class="stroke-white">M</div>
+          <div class="stroke-yellow">I</div>
+          <div class="stroke-white">N</div>
+          <div class="stroke-yellow md:mr-4 mr-1">G</div>
+          <div class="stroke-white md:ml-4 ml-1">S</div>
+          <div class="stroke-yellow">O</div>
+          <div class="stroke-white">O</div>
+          <div class="stroke-yellow">N</div>
+        </div>
+        <div class="mt-6 text-center text-2xl text-[#807F7E] md:text-5xl">
+          Page that you are looking is not available
+        </div>
+
+        <a href="/">
+          <div
+            class="mt-10 cursor-pointer border-[1px] border-white px-4 py-2 text-xl font-medium text-white md:px-8 md:py-4 md:text-4xl rounded-2xl"
+          >
+            Homepage
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .stroke-width-2 {
+    -webkit-text-stroke-width: 2px;
+  }
+  .stroke-white {
+    -webkit-text-stroke-color: var(--white, #fff);
+  }
+  .stroke-yellow {
+    -webkit-text-stroke-color: var(--Yellow, #fdc648);
+  }
+</style>
