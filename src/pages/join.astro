@@ -256,7 +256,9 @@ const faqs = [
     </section>
 
     <!-- Eligibility -->
-    <section class="container m-auto border-t border-white/10 px-[8%] py-16 lg:px-[6%]">
+    <section
+      class="container m-auto border-t border-white/10 px-[8%] py-16 lg:px-[6%]"
+    >
       <h2 class="text-2xl font-bold lg:text-4xl">เงื่อนไขการสมัครเบื้องต้น</h2>
       <ul class="mt-6 flex flex-col gap-3 text-[#DDDDDD] lg:text-lg">
         <li class="flex items-start gap-3">
@@ -413,14 +415,20 @@ const faqs = [
       e.preventDefault();
       if (el.open) {
         el.animate(
-          [{ height: el.scrollHeight + "px" }, { height: summary.offsetHeight + "px" }],
-          { duration: 220, easing: "ease-in-out" }
+          [
+            { height: el.scrollHeight + "px" },
+            { height: summary.offsetHeight + "px" },
+          ],
+          { duration: 220, easing: "ease-in-out" },
         ).onfinish = () => el.removeAttribute("open");
       } else {
         el.setAttribute("open", "");
         el.animate(
-          [{ height: summary.offsetHeight + "px" }, { height: el.scrollHeight + "px" }],
-          { duration: 220, easing: "ease-in-out" }
+          [
+            { height: summary.offsetHeight + "px" },
+            { height: el.scrollHeight + "px" },
+          ],
+          { duration: 220, easing: "ease-in-out" },
         );
       }
     });
