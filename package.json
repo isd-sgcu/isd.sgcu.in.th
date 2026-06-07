@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "packageManager": "pnpm@9.2.0",
   "engines": {
-    "node": "^20.9"
+    "node": "^24.14"
   },
   "scripts": {
     "dev": "astro dev",
@@ -16,13 +16,13 @@
     "format": "prettier --write \"*.{json,cjs,js,mjs,md}\" src && eslint src --fix"
   },
   "dependencies": {
-    "@astrojs/check": "0.7.0",
-    "@astrojs/svelte": "5.4.0",
-    "@astrojs/tailwind": "5.1.0",
+    "@astrojs/check": "0.9.9",
+    "@astrojs/svelte": "8.1.2",
+    "@astrojs/tailwind": "6.0.2",
+    "@fontsource-variable/anuphan": "5.2.8",
     "@fontsource-variable/space-grotesk": "5.0.18",
-    "@fontsource/noto-sans-thai-looped": "5.0.13",
     "@octokit/types": "13.5.0",
-    "astro": "4.9.3",
+    "astro": "6.4.4",
     "sharp": "0.33.4",
     "tailwindcss": "3.4.3",
     "typescript": "5.4.5"
@@ -36,12 +36,13 @@
     "eslint-plugin-astro": "1.2.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-svelte": "2.39.0",
+    "eslint-plugin-svelte": "2.46.1",
     "prettier": "3.3.1",
     "prettier-plugin-astro": "0.14.0",
     "prettier-plugin-organize-imports": "3.2.4",
     "prettier-plugin-svelte": "3.2.3",
     "prettier-plugin-tailwindcss": "0.6.1",
-    "svelte": "4.2.17"
+    "svelte": "5.56.2",
+    "svelte-eslint-parser": "1.8.0"
   }
 }

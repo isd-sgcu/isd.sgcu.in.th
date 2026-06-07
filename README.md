@@ -12,21 +12,17 @@ This website currently on have frontend since the content does not change very o
 
 ## Prerequisites
 
-- Node.js 20 LTS
-- pnpm 8
+We recommend using [asdf](https://asdf-vm.com/) to manage your development environment. The required versions are:
 
-We recommend using nvm to manage Node.js versions and Corepack to use the right
-version of package manager.
+- Node.js 24.x LTS
+- pnpm 11.x
 
-To install nvm, see here
-
-- https://github.com/nvm-sh/nvm (For Linux and MacOS)
-- https://github.com/coreybutler/nvm-windows (Windows)
-
-To use Corepack, run this command
+You can install the required versions using asdf with the following commands:
 
 ```bash
-corepack enable
+asdf plugin add nodejs
+asdf plugin add pnpm
+asdf install
 ```
 
 ## Before creating pull request

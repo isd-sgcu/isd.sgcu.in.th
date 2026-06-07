@@ -1,51 +1,451 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import ISDLogo from "@/assets/isd-logo-white.svg";
+import { Image } from "astro:assets";
+
+const roles = [
+  {
+    id: "pm",
+    title: "Project Manager",
+    icon: "ph-clipboard-text",
+    description:
+      "จัดการการดำเนินงานของโครงการต่าง ๆ ตั้งแต่เริ่มต้นคุยกับฝ่ายอื่น ๆ ในโครงการ วางแผนระยะเวลาทำงานต่าง ๆ จัดการคนและทรัพยากรของงาน และร่วมออกแบบระบบกับผู้พัฒนาในบางงาน ทำหน้าที่เป็น Product Owner ที่ประสานงานระหว่างทีมกับโครงการ และแก้ไขปัญหาไปร่วมกับทีม",
+    interview: true,
+    responsibilities: [
+      "เป็นผู้ติดต่อหลักสำหรับโครงการในส่วนของฝ่าย จัดการการสื่อสารระหว่างทีมและนอกฝ่าย",
+      "จัดการขอบเขต เป้าหมาย ความสำคัญ และเงื่อนไขในการประสานงานและการทำโครงการต่าง ๆ",
+      "จัดการวางแผนระยะเวลา ประมาณงบ และทรัพยากรคนในการทำโครงการต่าง ๆ โดยใช้เครื่องมือจัดการโครงการที่ถนัด เช่น Notion, Trello, Linear, หรือ Jira",
+      "ดูแลโครงการให้สามารถส่งงานได้ทันเวลา หรือแก้ไขปัญหาที่อาจเกิดขึ้นระหว่างทีมที่มีบทบาทหน้าที่แตกต่างกัน",
+    ],
+    qualifications: [
+      "มีการสื่อสารที่ดี",
+      "มีความเข้าใจเบื้องต้นเกี่ยวกับกระบวนการทำซอฟต์แวร์",
+      "มีความสามารถในการจัดการความต้องการและแปลงให้เป็นสิ่งที่ทีมสามารถดำเนินการต่อได้",
+      "มีความเข้าใจในการมอบหมายหน้าที่ที่มีความรับผิดชอบแตกต่างกันได้",
+      "เข้าใจและจัดการการใช้งบประมาณของโครงการในฝ่ายได้",
+    ],
+    note: "ตำแหน่งนี้มีการสัมภาษณ์ในช่วงวันที่ 16 – 18 มิถุนายน",
+  },
+  {
+    id: "frontend",
+    title: "Front-end Developer",
+    icon: "ph-code",
+    description:
+      "เป็นผู้แปลงจากงานออกแบบให้เป็นเว็บไซต์ที่ใช้งานได้จริง โดยมีความเข้าใจในระบบการทำงานของเว็บไซต์ การตรวจสอบข้อมูล การตรวจสอบสิทธ์ Best-practices ต่าง ๆ ในการสร้างเว็บไซต์ และเข้าใจเรื่องความปลอดภัยของเว็บไซต์ในเบื้องต้น",
+    interview: false,
+    responsibilities: [
+      "สร้าง Interface ของเว็บไซต์ที่มีความ Responsive และมีประสิทธิภาพ โดยอิงตามการออกแบบของฝ่าย UX/UI",
+      "ทำงานร่วมกับทีม Back-end Developer เพื่อเชื่อมต่อระหว่าง Front-end และ Back-end ให้สามารถใช้งานได้จริง",
+      "ใช้ Git และ GitHub สำหรับการทำงานร่วมกันตลอดโครงการ",
+      "ตรวจสอบว่าเว็บไซต์ทำงานตามที่คาดหวัง และดูดีในแต่ละอุปกรณ์",
+      "เขียนโค้ดที่อ่านง่าย มีประสิทธิภาพ และผู้อื่นสามารถทำงานต่อได้ง่าย มีความรู้ใน Best Practice ต่าง ๆ ของเครื่องมือที่ใช้งาน",
+    ],
+    qualifications: [
+      "กรณีที่มีความสามารถและเชี่ยวชาญอยู่แล้ว อาจให้เป็นหัวหน้าของทีมย่อยเพื่อจัดการและแบ่งงานให้กับหน้าใหม่ในทีม",
+      "มีความเข้าใจ JavaScript, CSS, และโครงสร้างของ HTML เป็นอย่างดี",
+      "มีประสบการณ์ในการใช้งาน Front-end Framework หรือ Library ต่าง ๆ ที่เกี่ยวข้อง เช่น React, Vue.js, Svelte, Angular, หรืออื่นใดที่คล้ายกันมาบ้าง",
+      "มีความเข้าใจในการแปลงงานออกแบบที่ได้จาก Designer ให้เป็นเว็บไซต์ที่ใช้งานได้จริง และเป็นประโยชน์ต่อผู้ใช้งาน",
+      "เข้าใจการทำให้เว็บไซต์ Responsive",
+      "มีความคุ้นเคยหรือเข้าใจการใช้งาน RESTful API เพื่อทำงานร่วมกับทีม Back-end",
+      "ใช้งาน Git และ GitHub ได้อย่างดี",
+      "มีสกิลในการแก้ไขปัญหาเฉพาะหน้า การแก้ไขรายละเอียดเล็ก ๆ และการทำงานร่วมกัน",
+    ],
+    note: null,
+  },
+  {
+    id: "backend",
+    title: "Back-end Developer",
+    icon: "ph-database",
+    description:
+      "แปลงเงื่อนไขต่าง ๆ ของเว็บไซต์ให้เป็นระบบที่ใช้งานได้จริง มีความปลอดภัย ประสิทธิภาพสูง เชื่อถือได้ และรองรับการขยายระบบเมื่อมีการใช้งานสูง โดยทำงานร่วมกับฝ่าย Front-end เพื่อให้มั่นใจว่าข้อมูลที่ส่งผ่านระหว่างกันมีความถูกต้องและปลอดภัย",
+    interview: false,
+    responsibilities: [
+      "ออกแบบระบบที่มีความปลอดภัยสูงและรองรับผู้ใช้งานจำนวนมากได้",
+      "อาจมีการให้วางแผนการทำระบบ Observability โดยทำงานร่วมกับฝ่าย DevOps หากจำเป็น",
+      "ทำงานร่วมกับฝ่าย Front-end โดยสร้างคู่มือการใช้งาน API ในรูปแบบที่เป็นมาตรฐาน เช่น OpenAPI เพื่อให้มีความเข้าใจที่ตรงกันระหว่างทีม",
+      "ใช้ Git และ GitHub ในการทำงานร่วมกัน",
+      "ติดตามและแก้ไขปัญหาที่อาจเกิดขึ้นขณะมีการใช้งานระบบจริง",
+      "เขียนเอกสารกำกับการใช้งานสำหรับ API โครงสร้างข้อมูล หรือสถาปัตยกรรมเพื่อให้ผู้อื่นในทีมสามารถทำงานร่วมกันได้ง่าย",
+    ],
+    qualifications: [
+      "กรณีที่มีความสามารถและเชี่ยวชาญอยู่แล้ว อาจให้เป็นหัวหน้าของทีมย่อยเพื่อจัดการและแบ่งงานให้กับหน้าใหม่ในทีม",
+      "มีความเข้าใจหรือมีประสบการณ์ในการใช้งานภาษาสำหรับระบบเบื้องหลัง เช่น Go, Java, PHP, Python, Node.js, Rust หรืออื่น ๆ ที่ใกล้เคียงกัน",
+      "สามารถออกแบบ สร้าง และเขียนเอกสารกำกับการใช้งานที่อ่านเข้าใจง่าย และสามารถทำงานต่อได้",
+      "เข้าใจในระบบความปลอดภัยของเว็บไซต์และ API เช่นการใช้ Token อย่าง JWT หรือ OAuth ในการเข้าสู่ระบบและยืนยันตัวตนผู้ใช้งาน มีมาตรการป้องกันการเข้าถึงอย่างเหมาะสม",
+      "เขียนโค้ดที่มีประสิทธิภาพ มี Scalability และผู้อื่นสามารถทำงานร่วมด้วยได้",
+      "ออกแบบและสื่อสารกับ DevOps ให้ระบบสามารถใช้งานได้จริง",
+    ],
+    note: null,
+  },
+  {
+    id: "designer",
+    title: "UX/UI Designer",
+    icon: "ph-paint-brush-broad",
+    description:
+      "ออกแบบหน้าตาของเว็บไซต์และระบบต่าง ๆ ให้ใช้งานง่ายและดูดี โดยคิดจากมุมของผู้ใช้จริงว่าใช้แล้วเข้าใจง่าย กดง่ายหรือไม่ แล้วส่งต่อแบบที่ออกแบบให้ทีม Front-end นำไปทำเป็นเว็บจริง",
+    interview: false,
+    responsibilities: [
+      "ออกแบบหน้าตาเว็บไซต์ด้วยเครื่องมืออย่าง Figma หรือที่คล้ายกัน",
+      "วางแผน Story การใช้งานของผู้ใช้ ให้ซอฟต์แวร์ที่ออกแบบเข้าใจง่ายและสะดวก",
+      "ทำงานร่วมกับทีม Front-end เพื่อให้เว็บที่ออกมาตรงกับที่ออกแบบไว้",
+      "ออกแบบให้ดูดีทั้งบนมือถือและคอมพิวเตอร์",
+      "ปรับแก้งานออกแบบตาม Feedback ของทีม",
+      "ออกแบบชิ้นงานสำหรับใช้เป็น asset ของเว็บไซต์",
+    ],
+    qualifications: [
+      "พอใช้ Figma หรือเครื่องมือออกแบบอื่น ๆ ได้บ้าง (หรือยินดีเรียนรู้)",
+      "มีความเข้าใจเรื่องการจัดวาง สี และรูปแบบตัวอักษร พอสมควร",
+      "ใส่ใจว่าผู้ใช้จะใช้งานง่ายหรือเกิดความสับสนหรือไม่",
+      "สื่อสารและทำงานร่วมกับทีมได้",
+    ],
+    note: null,
+  },
+  {
+    id: "devops",
+    title: "DevOps Engineer",
+    icon: "ph-cloud",
+    description:
+      "วางแผน สื่อสาร ตัดสินใจ และจัดการระบบโครงสร้างพื้นฐาน เช่น การเลือกเซิร์ฟเวอร์ การจัดการโดเมน หรือระบบอื่น ๆ เบื้องหลัง เพื่อให้ทีมพัฒนาสามารถทำงานได้ และนำโค้ดที่ได้รับจากทีมพัฒนา มา Deploy ให้ใช้งานได้จริง รองรับ CI/CD เพื่อให้ระบบมีความเสถียร รองรับผู้ใช้งานจำนวนมาก ใช้งานได้จริงตามเงื่อนไขของระบบ โดยอยู่ภายในงบประมาณที่มีให้สำหรับโครงการต่าง ๆ ในฝ่าย",
+    interview: false,
+    responsibilities: [
+      "จัดการบำรุงรักษาโครงสร้างพื้นฐานของระบบภายในฝ่าย เพื่อให้บริการต่าง ๆ สามารถทำงานได้อย่างมีประสิทธิภาพ",
+      "วาง CI/CD Pipeline ที่ build, test, deployment ได้จริง",
+      "จัดการระบบอัตโนมัติเพื่อให้การทำงานง่ายขึ้น",
+      "ดูแลการปรับตั้งค่าของโดเมน SSL Certificate หรือระบบที่เกี่ยวข้อง ให้พร้อมใช้งานเสมอ",
+      "ตรวจตราการโหลดของเซิร์ฟเวอร์ ตรวจดูปัญหาคอขวดในระบบ เพื่อสื่อสารให้ทีมที่เกี่ยวข้องแก้ไขต่อไป",
+      "แก้ปัญหาภายในระบบโครงสร้างพื้นฐานต่าง ๆ",
+      "ทำงานกับระบบ Cloud Computing เจ้าต่าง ๆ เช่น Google Cloud Platform, AWS, Cloudflare อย่างเหมาะสม และอยู่ภายในงบประมาณ",
+      "วางแนวทางในการส่งออกหรือนำเข้าข้อมูลเพื่อการประมวลผลตามสมควร",
+    ],
+    qualifications: [
+      "สามารถใช้เครื่องมือ CI/CD Pipeline ได้",
+      "คุ้นเคยกับการจัดการโดเมน เช่นการปรับตั้งค่าและการบริหารจัดการ",
+      "Deploy ระบบที่ใช้ทรัพยากรได้อย่างคุ้มค่า",
+      "สามารถติดตามการใช้ทรัพยากรและเปลี่ยนแปลงให้เหมาะสมตามสถานการณ์ได้",
+      "วางแผนกับทีม Front-end & Back-end",
+    ],
+    note: null,
+  },
+];
+
+const faqs = [
+  {
+    q: "ใครสามารถสมัครได้บ้าง",
+    a: "นิสิตจุฬาลงกรณ์มหาวิทยาลัยระดับปริญญาตรีทุกชั้นปี รวมทั้งนิสิตชั้นปีที่ 1 ในปีการศึกษา 2569 (CU 110/Dek 69) ที่ยังไม่มีเลขประจำตัวนิสิตด้วย",
+  },
+  {
+    q: "ต้องมีประสบการณ์หรือสกิลใด ๆ ก่อนหรือไม่",
+    a: "ไม่จำเป็น ขอแค่ยินดีที่จะเรียนรู้ก็เพียงพอ",
+  },
+  {
+    q: "การสื่อสารระหว่างทำงานเป็นภาษาอะไร",
+    a: "ภาษาไทยเป็นหลัก",
+  },
+  {
+    q: "มองหาคนแบบไหน",
+    a: "เรากำลังมองหาคนที่มีความรับผิดชอบสูง และมีใจรักในการสร้างระบบเพื่อพัฒนามหาวิทยาลัย",
+  },
+  {
+    q: "มีค่าตอบแทนไหม",
+    a: "ทุกตำแหน่งไม่มีค่าตอบแทนให้ ทุกคนถือว่าเป็นอาสาสมัคร แต่จะได้รับประสบการณ์ในการทำระบบที่มีคนนับพันคนใช้งานจริง กับทีมจริง ๆ กลับไปแน่นอน",
+  },
+  {
+    q: "ต้องมีโครงการที่เคยทำหรือมีพอร์ตฟอลิโอไหม",
+    a: "ไม่จำเป็น ขอแค่อยากเรียนรู้ อยากทำงานร่วมกัน ก็เพียงพอแล้ว อาจจะมีช่วงที่ต้องเรียนรู้ด้วยตนเองบ้าง แต่ทุกคนก็เรียนรู้ไปด้วยกัน",
+  },
+  {
+    q: "งานเยอะไหม",
+    a: "ในแต่ละปีจะมีโครงการแตกต่างกันไป โดยสามารถเลือกทำโครงการใดหรือไม่ได้ตามความสมัครใจ สำหรับเนื้องานแต่ละโครงการ ขึ้นอยู่กับการตกลงความรับผิดชอบกับ PM สามารถรับมากหรือน้อยตามสะดวกได้",
+  },
+];
 ---
 
-<Layout title="Join" description="Coming soon">
-  <main class="absolute top-0">
-    <div class="flex w-full items-center justify-center">
-      <div
-        class="flex h-screen w-screen flex-col items-center justify-center bg-primary px-[12%] md:px-0"
-      >
-        <div
-          class="stroke-width-2 flex flex-row justify-center text-5xl font-medium text-primary md:text-[10rem]"
-        >
-          <div class="stroke-white">C</div>
-          <div class="stroke-yellow">0</div>
-          <div class="stroke-white">M</div>
-          <div class="stroke-yellow">I</div>
-          <div class="stroke-white">N</div>
-          <div class="stroke-yellow mr-1 md:mr-4">G</div>
-          <div class="ml-1 stroke-white md:ml-4">S</div>
-          <div class="stroke-yellow">O</div>
-          <div class="stroke-white">O</div>
-          <div class="stroke-yellow">N</div>
-        </div>
-        <div class="mt-6 text-center text-2xl text-[#807F7E] md:text-5xl">
-          Page that you are looking is not available
-        </div>
+<Layout
+  title="Join ISD"
+  description="ร่วมงานกับฝ่ายพัฒนาระบบสารสนเทศ (ISD) ปีการศึกษา 2569"
+>
+  <link
+    slot="head"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+  <link
+    slot="head"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+  />
+  <link
+    slot="head"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
+  />
+  <main class="relative top-0 min-h-screen bg-[#181818] text-white">
+    <!-- Hero -->
+    <section
+      class="relative flex min-h-screen flex-col items-start justify-center overflow-hidden bg-gradient-to-b from-black to-indigo-950 px-[8%] py-24 lg:px-[6%]"
+    >
+      <!-- decorative circles -->
 
-        <a href="/">
-          <div
-            class="mt-10 cursor-pointer rounded-2xl border-[1px] border-white px-4 py-2 text-xl font-medium text-white md:px-8 md:py-4 md:text-4xl"
+      <div
+        class="absolute -right-16 bottom-16 aspect-square w-32 animate-sliding-right rounded-full bg-[#D83273] lg:-right-32 lg:bottom-0 lg:w-64"
+      >
+      </div>
+      <div
+        class="absolute -right-32 -top-24 aspect-square h-[240px] animate-sliding-right rounded-full ring-[32px] ring-indigo-800 lg:-right-80 lg:-top-1/4 lg:h-[600px] lg:ring-[64px]"
+      >
+      </div>
+      <div
+        class="absolute -bottom-12 -left-16 aspect-square w-48 animate-sliding-left rounded-full ring-[32px] ring-indigo-800 lg:-bottom-16 lg:-left-24 lg:w-64"
+      >
+      </div>
+      <div
+        class="absolute -bottom-8 right-[10%] aspect-square w-24 animate-sliding-up rounded-full ring-[12px] ring-blue-700 lg:-bottom-32 lg:right-1/4 lg:w-48 lg:ring-[28px]"
+      >
+      </div>
+      <Image
+        src={ISDLogo}
+        alt="ISD Logo"
+        class="relative w-28 animate-sliding-left lg:w-44"
+      />
+      <h1
+        class="relative z-10 mt-4 animate-sliding-left text-5xl font-bold leading-tight lg:text-8xl"
+      >
+        Join ISD
+      </h1>
+      <p
+        class="relative z-10 mt-6 max-w-2xl animate-sliding-left text-base font-light leading-relaxed text-[#DDDDDD] lg:text-xl"
+      >
+        Summer Recruitment ปีการศึกษา 2569 รับสมัคร <span
+          class="font-medium text-white">8–15 มิถุนายน 2569</span
+        >
+      </p>
+      <p
+        class="relative z-10 mt-3 max-w-2xl animate-sliding-left text-base font-light leading-relaxed text-[#DDDDDD] lg:text-lg"
+      >
+        ร่วมสร้างระบบสารสนเทศให้กับนิสิตจุฬาฯ ทั้งเว็บไซต์ แอปพลิเคชัน
+        และระบบที่ใช้จริงโดยนิสิตและบุคคลทั่วไปกว่า 100,000 คน
+      </p>
+      <div
+        class="relative z-10 mt-10 flex animate-sliding-left flex-wrap gap-4"
+      >
+        <a href="/apply" class="apply-btn-wrap">
+          <button
+            class="apply-btn rounded-2xl bg-[#FDC648] px-8 py-4 text-lg font-semibold text-black transition-opacity hover:opacity-80"
           >
-            Homepage
-          </div>
+            สมัครเลย <i class="ph-bold ph-arrow-right"></i>
+          </button>
+        </a>
+        <a
+          href="https://www.instagram.com/isd.sgcu/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button
+            class="rounded-2xl border border-white/30 px-8 py-4 text-lg font-light text-white transition-colors hover:border-white hover:bg-white/5"
+          >
+            IG: @isd.sgcu
+          </button>
         </a>
       </div>
-    </div>
+      <p class="relative z-10 mt-4 animate-sliding-left text-sm text-[#DDDDDD]">
+        มีคำถาม? ติดต่อที่ <a
+          href="mailto:isd@sgcu.in.th"
+          class="text-white underline underline-offset-2">isd@sgcu.in.th</a
+        >
+      </p>
+    </section>
+
+    <!-- Eligibility -->
+    <section
+      class="container m-auto border-t border-white/10 px-[8%] py-16 lg:px-[6%]"
+    >
+      <h2 class="text-2xl font-bold lg:text-4xl">เงื่อนไขการสมัครเบื้องต้น</h2>
+      <ul class="mt-6 flex flex-col gap-3 text-[#DDDDDD] lg:text-lg">
+        <li class="flex items-start gap-3">
+          <i
+            class="ph-fill ph-check-circle mt-1 shrink-0 text-xl text-[#FDC648]"
+          ></i>
+          <span
+            >เป็นนิสิตระดับปริญญาตรี ทุกชั้นปี ในคณะใด ๆ ก็ได้
+            ของจุฬาลงกรณ์มหาวิทยาลัย ในปีการศึกษา 2569</span
+          >
+        </li>
+        <li class="flex items-start gap-3">
+          <i
+            class="ph-fill ph-check-circle mt-1 shrink-0 text-xl text-[#FDC648]"
+          ></i>
+          <span>ยินดีที่จะเรียนรู้ และรับผิดชอบงานที่ได้รับมอบหมายได้</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <i
+            class="ph-fill ph-check-circle mt-1 shrink-0 text-xl text-[#FDC648]"
+          ></i>
+          <span>กล้าที่จะออกความเห็นในระหว่างการทำงานต่าง ๆ</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Roles -->
+    <section class="container m-auto px-[8%] py-16 lg:px-[6%]">
+      <h2 class="text-2xl font-bold lg:text-4xl">ตำแหน่งที่เปิดรับ</h2>
+      <div class="mt-10 flex flex-col gap-6">
+        {
+          roles.map((role) => (
+            <details class="group rounded-2xl border border-white/10 bg-white/5 transition-colors hover:border-white/20">
+              <summary class="flex cursor-pointer list-none items-center justify-between px-6 py-5">
+                <div>
+                  <div class="flex items-center gap-3">
+                    <i class={`ph ${role.icon} text-2xl text-[#FDC648]`} />
+                    <h3 class="text-lg font-semibold">{role.title}</h3>
+                    {role.note && (
+                      <span class="rounded-full bg-[#FDC648]/10 px-2 py-0.5 text-xs text-[#FDC648]">
+                        มีสัมภาษณ์
+                      </span>
+                    )}
+                  </div>
+                  <p class="mt-1 text-sm text-[#DDDDDD]">{role.description}</p>
+                </div>
+                <i class="ph ph-caret-down ml-4 shrink-0 text-xl text-[#DDDDDD] transition-transform group-open:rotate-180" />
+              </summary>
+              <div class="border-t border-white/10 px-6 pb-6 pt-5">
+                <div class="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <h4 class="mb-3 text-sm font-semibold uppercase tracking-widest text-[#FDC648]">
+                      สิ่งที่คุณจะได้ทำ
+                    </h4>
+                    <ul class="flex flex-col gap-2">
+                      {role.responsibilities.map((r) => (
+                        <li class="flex items-start gap-2 text-sm text-[#DDDDDD]">
+                          <i class="ph ph-minus mt-0.5 shrink-0 text-white/40" />
+                          <span>{r}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="mb-3 text-sm font-semibold uppercase tracking-widest text-[#FDC648]">
+                      ความคาดหวังในตำแหน่ง
+                    </h4>
+                    <ul class="flex flex-col gap-2">
+                      {role.qualifications.map((q) => (
+                        <li class="flex items-start gap-2 text-sm text-[#DDDDDD]">
+                          <i class="ph ph-minus mt-0.5 shrink-0 text-white/40" />
+                          <span>{q}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {role.note && (
+                      <p class="mt-4 flex items-start gap-2 rounded-xl bg-[#FDC648]/10 px-4 py-3 text-sm text-[#FDC648]">
+                        <i class="ph-fill ph-warning mt-0.5 shrink-0 text-base" />
+                        <span>{role.note}</span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container m-auto px-[8%] py-16 lg:px-[6%]">
+      <h2 class="flex items-center gap-3 text-2xl font-bold lg:text-4xl">
+        <i class="ph ph-question text-[#FDC648]"></i>
+        FAQ คำถามพบบ่อย
+      </h2>
+      <div class="mt-8 flex flex-col gap-4">
+        {
+          faqs.map((item) => (
+            <details class="group rounded-2xl border border-white/10 bg-white/5">
+              <summary class="flex cursor-pointer list-none items-center justify-between px-6 py-4">
+                <span class="font-medium">{item.q}</span>
+                <i class="ph ph-caret-down ml-4 shrink-0 text-xl text-[#DDDDDD] transition-transform group-open:rotate-180" />
+              </summary>
+              <div class="border-t border-white/10 px-6 pb-5 pt-4 text-sm leading-relaxed text-[#DDDDDD]">
+                {item.a}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      class="container m-auto flex flex-col items-center justify-center border-t border-white/10 px-[8%] py-24 text-center lg:px-[6%]"
+    >
+      <p class="text-sm font-light uppercase tracking-[.3em] text-[#FDC648]">
+        รับสมัคร 8–15 มิถุนายน 2569
+      </p>
+      <h2 class="mt-4 text-4xl font-bold lg:text-6xl">พร้อมแล้วใช่ไหม?</h2>
+      <p class="mt-4 max-w-lg text-base text-[#DDDDDD] lg:text-lg">
+        กรอกใบสมัครและบอกเราว่าคุณจะสร้างอะไรให้กับจุฬาฯ
+      </p>
+      <a href="/apply" class="apply-btn-wrap mt-8">
+        <button
+          class="apply-btn rounded-2xl bg-[#FDC648] px-10 py-4 text-lg font-semibold text-black transition-opacity hover:opacity-80"
+        >
+          กรอกใบสมัคร <i class="ph-bold ph-arrow-right"></i>
+        </button>
+      </a>
+      <p class="mt-6 text-sm text-[#DDDDDD]">
+        ติดต่อสอบถาม:
+        <a
+          href="https://www.instagram.com/isd.sgcu/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-white hover:underline">@isd.sgcu</a
+        >
+        {" "}หรือ{" "}
+        <a href="mailto:isd@sgcu.in.th" class="text-white hover:underline"
+          >isd@sgcu.in.th</a
+        >
+      </p>
+    </section>
   </main>
 </Layout>
 
-<style>
-  .stroke-width-2 {
-    -webkit-text-stroke-width: 2px;
+<script>
+  document.querySelectorAll<HTMLDetailsElement>("details").forEach((el) => {
+    el.style.overflow = "hidden";
+    const summary = el.querySelector("summary")!;
+    summary.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (el.open) {
+        el.animate(
+          [
+            { height: el.scrollHeight + "px" },
+            { height: summary.offsetHeight + "px" },
+          ],
+          { duration: 220, easing: "ease-in-out" },
+        ).onfinish = () => el.removeAttribute("open");
+      } else {
+        el.setAttribute("open", "");
+        el.animate(
+          [
+            { height: summary.offsetHeight + "px" },
+            { height: el.scrollHeight + "px" },
+          ],
+          { duration: 220, easing: "ease-in-out" },
+        );
+      }
+    });
+  });
+
+  const CLOSE = new Date("2026-06-15T23:59:59+07:00");
+  if (new Date() > CLOSE) {
+    document
+      .querySelectorAll<HTMLElement>(".apply-btn-wrap")
+      .forEach((wrap) => {
+        const replacement = document.createElement("button");
+        replacement.disabled = true;
+        replacement.className =
+          wrap.className.replace("apply-btn-wrap", "").trim() +
+          " cursor-not-allowed rounded-2xl bg-white/10 px-8 py-4 text-lg font-semibold text-white/40";
+        replacement.textContent = "ปิดรับสมัครแล้ว";
+        wrap.replaceWith(replacement);
+      });
   }
-  .stroke-white {
-    -webkit-text-stroke-color: var(--white, #fff);
-  }
-  .stroke-yellow {
-    -webkit-text-stroke-color: var(--Yellow, #fdc648);
-  }
-</style>
+</script>
