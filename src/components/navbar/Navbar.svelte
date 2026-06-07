@@ -1,5 +1,6 @@
 <script lang="ts">
   import LogoSgcu from "./LogoSGCU.svelte";
+  import LogoIsd from "./LogoISD.svelte";
   import Menu from "./Menu.svelte";
   import NavLink from "./NavLink.svelte";
 
@@ -18,7 +19,9 @@
         ? 'fixed'
         : 'sticky'}"
     >
-      <LogoSgcu classProps="flex justify-start relative h-8 lg:h-12" />
+      <div class="flex items-center gap-1">
+        <LogoSgcu classProps="h-8 lg:h-12" />
+      </div>
       <div class="flex flex-row items-center">
         <p class="mr-2 text-base font-light lg:mr-6">Menu</p>
         <button
