@@ -17,12 +17,12 @@ importers:
       '@astrojs/tailwind':
         specifier: 6.0.2
         version: 6.0.2(astro@6.4.4(jiti@1.21.3)(rollup@4.61.1)(yaml@2.9.0))(tailwindcss@3.4.3)
+      '@fontsource-variable/anuphan':
+        specifier: 5.2.8
+        version: 5.2.8
       '@fontsource-variable/space-grotesk':
         specifier: 5.0.18
         version: 5.0.18
-      '@fontsource/noto-sans-thai-looped':
-        specifier: 5.0.13
-        version: 5.0.13
       '@octokit/types':
         specifier: 13.5.0
         version: 13.5.0
@@ -386,11 +386,11 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
+  '@fontsource-variable/anuphan@5.2.8':
+    resolution: {integrity: sha512-FkrSnSrcgbpUxovuOfvbhdVZ2pk5RS2e1XxI6+Hb1IlZ/dYq1am1lrp8Y9PKSmVnie4Vq+x5eatPvEGNMRhkdA==}
+
   '@fontsource-variable/space-grotesk@5.0.18':
     resolution: {integrity: sha512-Z5uQmCjPdNobaFCtdA7aguerAQi4uvMRcUXhD+74N6Nq2Shxr0skvNzxB9mQVtkddGpB996RXipCDq9qzb525g==}
-
-  '@fontsource/noto-sans-thai-looped@5.0.13':
-    resolution: {integrity: sha512-7Uh53KTaql1ODKSRAf6GT0igK0bHrCSC/eQ4LfE3E0xby/rzHYUSl75/a2g7fDNdnUczyH2YAYeeSDxiNWIzxQ==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -3751,9 +3751,9 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@fontsource-variable/space-grotesk@5.0.18': {}
+  '@fontsource-variable/anuphan@5.2.8': {}
 
-  '@fontsource/noto-sans-thai-looped@5.0.13': {}
+  '@fontsource-variable/space-grotesk@5.0.18': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
