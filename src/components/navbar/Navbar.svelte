@@ -1,6 +1,5 @@
 <script lang="ts">
   import LogoSgcu from "./LogoSGCU.svelte";
-  import LogoIsd from "./LogoISD.svelte";
   import Menu from "./Menu.svelte";
   import NavLink from "./NavLink.svelte";
 
