@@ -1,7 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import ISDLogo from "@/assets/logo@2x.svg";
+import ISDLogo from "@/assets/isd-logo-white.svg";
+import SGCULogoColor from "@/assets/sgcu-logo-color.svg";
 import { Image } from "astro:assets";
 import Members from "@/components/member/Members.svelte";
 
@@ -56,12 +57,17 @@ const orgMembers = await fetchOrgMembers();
   <section
     class="flex h-screen w-screen -translate-y-12 flex-col items-center justify-center bg-black lg:-translate-y-32"
   >
-    <Image src={ISDLogo} class="w-60 lg:w-80" alt="logo" />
+    <div class="flex flex-row gap-6 items-center">
+      <Image src={ISDLogo} class="w-44 lg:w-60" alt="ISD Logo" />
+      <div class="size-32 lg:size-40 p-5 rounded-full bg-white">
+        <Image src={SGCULogoColor} class="w-full h-full" alt="SGCU Logo" />
+      </div>
+    </div>
     <div
       class="flex max-w-xl flex-col items-center justify-center text-center text-white"
     >
       <p class="my-12 text-4xl font-bold">What is ISD?</p>
-      <p class="text-md">
+      <p class="text-md text-balance">
         ฝ่ายพัฒนาระบบสารสนเทศ (Information System Development - ISD)
         เป็นฝ่ายภายใต้องค์การบริหารสโมสรนิสิตจุฬาฯ (อบจ.) ที่มีหน้าที่ร่วมมือกับ
         อบจ. และองค์กรต่าง ๆ ในจุฬาฯ เพื่อพัฒนาระบบเว็บไซต์ แอปพลิเคชัน
