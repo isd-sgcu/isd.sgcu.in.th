@@ -36,12 +36,13 @@
     "eslint-plugin-astro": "1.2.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-svelte": "2.39.0",
+    "eslint-plugin-svelte": "2.46.1",
     "prettier": "3.3.1",
     "prettier-plugin-astro": "0.14.0",
     "prettier-plugin-organize-imports": "3.2.4",
     "prettier-plugin-svelte": "3.2.3",
     "prettier-plugin-tailwindcss": "0.6.1",
-    "svelte": "5.56.2"
+    "svelte": "5.56.2",
+    "svelte-eslint-parser": "1.8.0"
   }
 }
