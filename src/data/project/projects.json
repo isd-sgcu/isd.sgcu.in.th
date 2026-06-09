@@ -5,7 +5,10 @@
     "time": "Dec - Jan 69",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/oph26-backend", "isd-sgcu/oph26-frontend"]
+    "repo": [
+      "isd-sgcu/oph26-backend",
+      "isd-sgcu/oph26-frontend"
+    ]
   },
   {
     "title": "Chula ChiangMai 2025",
@@ -13,7 +16,11 @@
     "time": "Oct - Dec 68",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/cucm25-frontend", "isd-sgcu/cucm25-backend", "isd-sgcu/cucm25-infra"]
+    "repo": [
+      "isd-sgcu/cucm25-frontend",
+      "isd-sgcu/cucm25-backend",
+      "isd-sgcu/cucm25-infra"
+    ]
   },
   {
     "title": "Rub Puen Kao Mai 68",
@@ -21,7 +28,10 @@
     "time": "Jun - Aug 68",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/fdrpkm68-frontend", "isd-sgcu/fdrpkm68-backend"]
+    "repo": [
+      "isd-sgcu/fdrpkm68-frontend",
+      "isd-sgcu/fdrpkm68-backend"
+    ]
   },
   {
     "title": "CU Open House 68",
@@ -29,7 +39,10 @@
     "time": "Dec - Jan 68",
     "description": "Dashboard for CU Openhouse 2025",
     "images": [],
-    "repo": ["isd-sgcu/oph-68-frontend", "isd-sgcu/oph-68-refined"]
+    "repo": [
+      "isd-sgcu/oph-68-frontend",
+      "isd-sgcu/oph-68-refined"
+    ]
   },
   {
     "title": "CU-TU Unity Ball 2025",
@@ -37,7 +50,10 @@
     "time": "Jan - Feb 68",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/cutu-2025-frontend", "isd-sgcu/cutu-2025-backend"]
+    "repo": [
+      "isd-sgcu/cutu-2025-frontend",
+      "isd-sgcu/cutu-2025-backend"
+    ]
   },
   {
     "title": "SUCU 2024",
@@ -45,7 +61,10 @@
     "time": "Nov - Dec 67",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/sucu-frontend-2024", "isd-sgcu/sucu-backend-2024"]
+    "repo": [
+      "isd-sgcu/sucu-frontend-2024",
+      "isd-sgcu/sucu-backend-2024"
+    ]
   },
   {
     "title": "CU Open House 67",
@@ -53,7 +72,9 @@
     "time": "Dec - Jan 67",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/oph-67-backend"]
+    "repo": [
+      "isd-sgcu/oph-67-backend"
+    ]
   },
   {
     "title": "Rub Puen Kao Mai 67",
@@ -73,7 +94,9 @@
     "time": "Jan - Mar 67",
     "description": "An interactive game made for the CU-TU Unity Ball 2024 event.",
     "images": [],
-    "repo": ["isd-sgcu/cutu-2024"]
+    "repo": [
+      "isd-sgcu/cutu-2024"
+    ]
   },
   {
     "title": "CU Open House 2024",
@@ -81,7 +104,10 @@
     "time": "Dec - Jan 66",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/oph66-frontend", "isd-sgcu/oph66-backend"]
+    "repo": [
+      "isd-sgcu/oph66-frontend",
+      "isd-sgcu/oph66-backend"
+    ]
   },
   {
     "title": "isd.sgcu.in.th",
@@ -89,7 +115,9 @@
     "time": "Dec - Jan 66",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/isd.sgcu.in.th"]
+    "repo": [
+      "isd-sgcu/isd.sgcu.in.th"
+    ]
   },
   {
     "title": "JohnJud",
@@ -97,31 +125,42 @@
     "time": "Nov - Feb 66",
     "description": "",
     "images": [],
-    "repo": ["isd-sgcu/johnjud-frontend", "isd-sgcu/johnjud-backend"]
+    "repo": [
+      "isd-sgcu/johnjud-frontend",
+      "isd-sgcu/johnjud-backend"
+    ]
   },
   {
     "title": "Rub Puen Kao Mai 66",
     "slug": "rpkm66",
     "time": "Jun - Aug 66",
     "description": "เว็บไซต์ลงทะเบียน ระบบเช็กอิน และระบบ E-Stamp สำหรับงานรับเพื่อนก้าวใหม่ 2566",
-    "images": ["rpkm66"],
-    "repo": ["isd-sgcu/rpkm66-frontend", "isd-sgcu/rpkm66-backend"]
+    "images": [],
+    "repo": [
+      "isd-sgcu/rpkm66-frontend",
+      "isd-sgcu/rpkm66-backend"
+    ]
   },
   {
     "title": "CU Wander",
     "slug": "cu-wander",
     "time": "Feb - Apr 66",
     "description": "Walk around Chulalongkorn University with CU Wander to gain points and redeem rewards with restaurants around Chulalongkorn University!",
-    "images": ["cu-wander"],
-    "repo": ["isd-sgcu/cu-wander-frontend"]
+    "images": [],
+    "repo": [
+      "isd-sgcu/cu-wander-frontend"
+    ]
   },
   {
     "title": "Rub Puen Kao Mai 65",
     "slug": "rnkm65",
     "time": "Mar - Aug 65",
     "description": "เว็บไซต์ลงทะเบีัยน ระบบเช็กอิน และระบบ E-Stamp สำหรับงานรับเพื่อนก้าวใหม่ 2565",
-    "images": ["rnkm65"],
-    "repo": ["isd-sgcu/rnkm65-frontend", "isd-sgcu/rnkm65-backend"]
+    "images": [],
+    "repo": [
+      "isd-sgcu/rnkm65-frontend",
+      "isd-sgcu/rnkm65-backend"
+    ]
   },
   {
     "title": "Freshy the Journey",
@@ -129,7 +168,9 @@
     "time": "Jun -  Aug 64",
     "description": "Interactive Experience ที่พาน้อง ๆ walkthrough ประสบการณ์รับน้อง",
     "images": [],
-    "repo": ["isd-sgcu/cu-the-journey"]
+    "repo": [
+      "isd-sgcu/cu-the-journey"
+    ]
   },
   {
     "title": "Club Mania",
@@ -137,7 +178,9 @@
     "time": "Jul - Aug 64",
     "description": "เว็บรวบรวมชมรมภายใต้อบจ. ใช้ในงาน club mania",
     "images": [],
-    "repo": ["isd-sgcu/club-mania-frontend"]
+    "repo": [
+      "isd-sgcu/club-mania-frontend"
+    ]
   },
   {
     "title": "6 Oct",
@@ -145,7 +188,9 @@
     "time": "Aug - Oct 64",
     "description": "Interactive Experience เล่าเกี่ยวกับเหตุการณ์ 6 ตุลา",
     "images": [],
-    "repo": ["isd-sgcu/6-oct-quiz"]
+    "repo": [
+      "isd-sgcu/6-oct-quiz"
+    ]
   },
   {
     "title": "Loy Krathong 64",
@@ -160,8 +205,10 @@
     "slug": "chu-magazine",
     "time": "Aug - Dec 64",
     "description": "เว็บบทความของฝ่ายสาราณียกร",
-    "images": ["chu.in.th"],
-    "repo": ["isd-sgcu/old-chu.in.th"]
+    "images": [],
+    "repo": [
+      "isd-sgcu/old-chu.in.th"
+    ]
   },
   {
     "title": "CU Welcome Fair\n(canceled due to covid)",
@@ -176,9 +223,7 @@
     "slug": "freshy-the-series",
     "time": "Jun - Aug 63",
     "description": "เว็บเลือกบ้านรับน้อง",
-    "images": [
-      "https://www.facebook.com/chulafreshmen/posts/pfbid0TwduubUKi1T5wuARwGuszf5uHx9ygqH4KXvVPVxCnEi3rR9uz2ZL7kg3PUyEBq6Yl"
-    ],
+    "images": [],
     "repo": []
   },
   {
@@ -227,6 +272,8 @@
     "time": "",
     "description": "ระบบ track movement ของผู้เข้าร่วมงานไปตามพื้นที่ต่าง ๆ ของงานรับน้องก้าวใหม่ ใช้ record ว่าน้องเดินไปจุดไหนบ้างเพื่อประเมินความเสี่ยง covid",
     "images": [],
-    "repo": ["no code, just design"]
+    "repo": [
+      "no code, just design"
+    ]
   }
 ]
