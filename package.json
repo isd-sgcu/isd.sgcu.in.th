@@ -22,6 +22,7 @@
     "@fontsource-variable/anuphan": "5.2.8",
     "@fontsource-variable/space-grotesk": "5.0.18",
     "@octokit/types": "13.5.0",
+    "@phosphor-icons/web": "2.1.2",
     "astro": "6.4.4",
     "sharp": "0.33.4",
     "tailwindcss": "3.4.3",
