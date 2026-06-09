@@ -1,51 +1,187 @@
 ---
-import ProjectContainer from "@/components/project/ProjectContainer.svelte";
 import Layout from "@/layouts/Layout.astro";
-const projects = [
-  {
-    title: "something-1",
-    image: "project-img.png",
+import { Image } from "astro:assets";
+import ISDLogo from "@/assets/isd-logo-white.svg";
+import projectsData from "@/data/project/projects.json";
+
+type Project = {
+  title: string;
+  slug: string;
+  time: string;
+  description: string;
+  repo: string[];
+};
+
+function extractYear(time: string): string {
+  if (!time) return "ไม่ระบุปี";
+  const match = time.match(/(\d+)\s*$/);
+  return match ? match[1] : "ไม่ระบุปี";
+}
+
+const projects = projectsData as Project[];
+
+const grouped = projects.reduce(
+  (acc, project) => {
+    const year = extractYear(project.time);
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(project);
+    return acc;
   },
-  {
-    title: "something-2",
-    image: "project-img.png",
-  },
-  {
-    title: "something-3",
-    image: "project-img.png",
-  },
-  {
-    title: "something-4",
-    image: "project-img.png",
-  },
-  {
-    title: "something-5",
-    image: "project-img.png",
-  },
-  {
-    title: "something-6",
-    image: "project-img.png",
-  },
-  {
-    title: "something-7",
-    image: "project-img.png",
-  },
-  {
-    title: "something-8",
-    image: "project-img.png",
-  },
-];
+  {} as Record<string, Project[]>,
+);
+
+const sortedYears = Object.keys(grouped).sort((a, b) => {
+  if (a === "ไม่ระบุปี") return 1;
+  if (b === "ไม่ระบุปี") return -1;
+  return parseInt(b) - parseInt(a);
+});
 ---
 
-<Layout title="Project" description="Project">
-  <main class="flex w-full items-center bg-primary text-white">
-    <div class="flex flex-col">
-      <h1 class="ml-[40px] flex text-5xl font-extrabold">Project</h1>
-      <ProjectContainer projects={projects} client:load />
-    </div>
-    <!-- <div class="flex flex-col md:hidden">
-      <h1 class="ml-[40px] flex text-5xl font-semibold">Project</h1>
-      <ProjectContainer projects={projects} client:load />
-    </div> -->
+<Layout
+  title="Projects — ISD"
+  description="ผลงานโครงการของฝ่ายพัฒนาระบบสารสนเทศ (ISD)"
+>
+  <main class="min-h-screen bg-[#181818] text-white">
+    <section class="container m-auto px-[8%] pb-24 pt-20 lg:px-[6%]">
+      <h1 class="text-4xl font-bold lg:text-6xl">Projects</h1>
+      <p class="mt-3 text-[#DDDDDD] lg:text-lg">
+        ผลงานโครงการของฝ่ายพัฒนาระบบสารสนเทศ (ISD)
+      </p>
+
+      <div class="mt-16 flex flex-col gap-16">
+        {
+          sortedYears.map((year) => (
+            <div>
+              <div class="mb-6 flex items-center gap-4">
+                <h2 class="text-2xl font-bold text-[#FDC648]">{year === "ไม่ระบุปี" ? "ไม่ระบุปี" : `ปี ${year}`}</h2>
+                <div class="h-px flex-1 bg-white/10" />
+                <span class="text-sm text-[#DDDDDD]">
+                  {grouped[year].length} โครงการ
+                </span>
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {grouped[year].map((project) => (
+                  <div class="glow-card group relative rounded-2xl p-px">
+                    <div class="flex h-full flex-col overflow-hidden rounded-[15px] bg-[#1c1c1c]">
+                    <div class="flex h-40 w-full items-center justify-center bg-black">
+                      <Image src={ISDLogo} alt="ISD Logo" class="w-16 opacity-80" />
+                    </div>
+                    <div class="flex flex-col p-5">
+                    <div class="flex items-start justify-between gap-3">
+                      <h3 class="font-semibold leading-snug">{project.title}</h3>
+                      {project.slug && (
+                        <a
+                          href={`/project/${project.slug}`}
+                          class="shrink-0 rounded-full border border-white/20 p-1.5 text-[#DDDDDD] transition-colors hover:border-white hover:text-white"
+                          aria-label={`ดูโครงการ ${project.title}`}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 256 256"
+                            fill="currentColor"
+                          >
+                            <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z" />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
+                    {project.time && (
+                      <span class="mt-2 inline-flex w-fit rounded-full bg-[#FDC648]/10 px-2.5 py-0.5 text-xs text-[#FDC648]">
+                        {project.time}
+                      </span>
+                    )}
+                    {project.description && (
+                      <p class="mt-3 line-clamp-3 text-sm leading-relaxed text-[#DDDDDD]">
+                        {project.description}
+                      </p>
+                    )}
+                    {project.repo.length > 0 &&
+                      project.repo[0] !== "no code, just design" && (
+                        <div class="mt-auto flex flex-wrap gap-2 pt-4">
+                          {project.repo.map((r) => {
+                            const isFullUrl = r.startsWith("http");
+                            const label = isFullUrl
+                              ? r.replace("https://github.com/", "")
+                              : r;
+                            const href = isFullUrl
+                              ? r
+                              : `https://github.com/${r}`;
+                            return (
+                              <a
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="glow-card relative inline-flex rounded-lg p-px"
+                              >
+                                <span class="flex items-center gap-1 rounded-[7px] bg-[#1c1c1c] px-2.5 py-1 text-xs text-[#DDDDDD] transition-colors hover:text-white">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 256 256"
+                                    fill="currentColor"
+                                  >
+                                    <path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24,40,40,0,0,0-40-40,8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68Z" />
+                                  </svg>
+                                  {label.split("/").pop()}
+                                </span>
+                              </a>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  .glow-card {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+      280px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+      rgba(255, 255, 255, 0.6),
+      transparent 70%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .glow-card:hover::before {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".glow-card").forEach((card) => {
+    card.addEventListener("mousemove", (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+    });
+  });
+</script>
