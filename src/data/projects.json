@@ -1,11 +1,87 @@
 [
   {
+    "title": "CU Open House 2026",
+    "slug": "oph26",
+    "time": "Dec - Jan 69",
+    "description": "",
+    "images": [],
+    "repo": ["isd-sgcu/oph26-backend", "isd-sgcu/oph26-frontend"]
+  },
+  {
+    "title": "Chula ChiangMai 2025",
+    "slug": "cucm25",
+    "time": "Oct - Dec 68",
+    "description": "",
+    "images": [],
+    "repo": ["isd-sgcu/cucm25-frontend", "isd-sgcu/cucm25-backend", "isd-sgcu/cucm25-infra"]
+  },
+  {
+    "title": "Rub Puen Kao Mai 68",
+    "slug": "rpkm68",
+    "time": "Jun - Aug 68",
+    "description": "",
+    "images": [],
+    "repo": ["isd-sgcu/fdrpkm68-frontend", "isd-sgcu/fdrpkm68-backend"]
+  },
+  {
+    "title": "CU Open House 68",
+    "slug": "oph68",
+    "time": "Dec - Jan 68",
+    "description": "Dashboard for CU Openhouse 2025",
+    "images": [],
+    "repo": ["isd-sgcu/oph-68-frontend", "isd-sgcu/oph-68-refined"]
+  },
+  {
+    "title": "CU-TU Unity Ball 2025",
+    "slug": "cutu-2025",
+    "time": "Jan - Feb 68",
+    "description": "",
+    "images": [],
+    "repo": ["isd-sgcu/cutu-2025-frontend", "isd-sgcu/cutu-2025-backend"]
+  },
+  {
+    "title": "SUCU 2024",
+    "slug": "sucu-2024",
+    "time": "Nov - Dec 67",
+    "description": "",
+    "images": [],
+    "repo": ["isd-sgcu/sucu-frontend-2024", "isd-sgcu/sucu-backend-2024"]
+  },
+  {
+    "title": "CU Open House 67",
+    "slug": "oph67",
+    "time": "Dec - Jan 67",
+    "description": "",
+    "images": [],
+    "repo": ["isd-sgcu/oph-67-backend"]
+  },
+  {
+    "title": "Rub Puen Kao Mai 67",
+    "slug": "rpkm67",
+    "time": "Jun - Aug 67",
+    "description": "",
+    "images": [],
+    "repo": [
+      "isd-sgcu/firstdate-rpkm67-frontend",
+      "isd-sgcu/rpkm67-backend",
+      "isd-sgcu/rpkm67-gateway"
+    ]
+  },
+  {
+    "title": "CU-TU Unity Ball 2024",
+    "slug": "cutu-2024",
+    "time": "Jan - Mar 67",
+    "description": "An interactive game made for the CU-TU Unity Ball 2024 event.",
+    "images": [],
+    "repo": ["isd-sgcu/cutu-2024"]
+  },
+  {
     "title": "CU Open House 2024",
     "slug": "openhouse2024",
     "time": "Dec - Jan 66",
     "description": "",
     "images": [],
-    "repo": []
+    "repo": ["isd-sgcu/oph66-frontend", "isd-sgcu/oph66-backend"]
   },
   {
     "title": "isd.sgcu.in.th",
@@ -21,7 +97,7 @@
     "time": "Nov - Feb 66",
     "description": "",
     "images": [],
-    "repo": []
+    "repo": ["isd-sgcu/johnjud-frontend", "isd-sgcu/johnjud-backend"]
   },
   {
     "title": "Rub Puen Kao Mai 66",
@@ -29,10 +105,7 @@
     "time": "Jun - Aug 66",
     "description": "เว็บไซต์ลงทะเบียน ระบบเช็กอิน และระบบ E-Stamp สำหรับงานรับเพื่อนก้าวใหม่ 2566",
     "images": ["rpkm66"],
-    "repo": [
-      "isd-sgcu/rpkm66-frontend",
-      "https://github.com/isd-sgcu/rpkm66-backend"
-    ]
+    "repo": ["isd-sgcu/rpkm66-frontend", "isd-sgcu/rpkm66-backend"]
   },
   {
     "title": "CU Wander",
@@ -40,7 +113,7 @@
     "time": "Feb - Apr 66",
     "description": "Walk around Chulalongkorn University with CU Wander to gain points and redeem rewards with restaurants around Chulalongkorn University!",
     "images": ["cu-wander"],
-    "repo": ["- https://github.com/isd-sgcu/cu-wander-frontend", "private"]
+    "repo": ["isd-sgcu/cu-wander-frontend"]
   },
   {
     "title": "Rub Puen Kao Mai 65",
@@ -48,10 +121,7 @@
     "time": "Mar - Aug 65",
     "description": "เว็บไซต์ลงทะเบีัยน ระบบเช็กอิน และระบบ E-Stamp สำหรับงานรับเพื่อนก้าวใหม่ 2565",
     "images": ["rnkm65"],
-    "repo": [
-      "https://github.com/isd-sgcu/rnkm65-frontend",
-      "https://github.com/isd-sgcu/rnkm65-backend"
-    ]
+    "repo": ["isd-sgcu/rnkm65-frontend", "isd-sgcu/rnkm65-backend"]
   },
   {
     "title": "Freshy the Journey",
@@ -59,7 +129,7 @@
     "time": "Jun -  Aug 64",
     "description": "Interactive Experience ที่พาน้อง ๆ walkthrough ประสบการณ์รับน้อง",
     "images": [],
-    "repo": ["https://github.com/isd-sgcu/cu-the-journey"]
+    "repo": ["isd-sgcu/cu-the-journey"]
   },
   {
     "title": "Club Mania",
@@ -67,9 +137,7 @@
     "time": "Jul - Aug 64",
     "description": "เว็บรวบรวมชมรมภายใต้อบจ. ใช้ในงาน club mania",
     "images": [],
-    "repo": [
-      "https://github.com/isd-sgcu/club-mania-backend\nhttps://github.com/isd-sgcu/club-mania-frontend"
-    ]
+    "repo": ["isd-sgcu/club-mania-frontend"]
   },
   {
     "title": "6 Oct",
@@ -77,7 +145,7 @@
     "time": "Aug - Oct 64",
     "description": "Interactive Experience เล่าเกี่ยวกับเหตุการณ์ 6 ตุลา",
     "images": [],
-    "repo": ["https://github.com/isd-sgcu/6-oct-quiz"]
+    "repo": ["isd-sgcu/6-oct-quiz"]
   },
   {
     "title": "Loy Krathong 64",
@@ -85,9 +153,7 @@
     "time": "Aug - Nov 64",
     "description": "mini game เก็บขยะในน้ำ แข่งขันกันแต่ละคณะ (คล้าย popcat.click)",
     "images": [],
-    "repo": [
-      "https://github.com/isd-sgcu/loy-krathong-64-frontend\nhttps://github.com/isd-sgcu/loy-krathong-64-backend"
-    ]
+    "repo": []
   },
   {
     "title": "CHU.in.th",
@@ -95,9 +161,7 @@
     "time": "Aug - Dec 64",
     "description": "เว็บบทความของฝ่ายสาราณียกร",
     "images": ["chu.in.th"],
-    "repo": [
-      "https://github.com/isd-sgcu/chu-magazine-backend\nhttps://github.com/isd-sgcu/chu-magazine-frontend"
-    ]
+    "repo": ["isd-sgcu/old-chu.in.th"]
   },
   {
     "title": "CU Welcome Fair\n(canceled due to covid)",
