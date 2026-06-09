@@ -22,22 +22,22 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="og:type" content="website" />
     <meta name="og:site_name" content="ISD.SGCU" />
-    <meta property="og:image" content="https://isd.sgcu.in.th/isd-banner.png" />
+    <meta property="og:image" content="/isd-banner.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="https://isd.sgcu.in.th/favicon.svg"
-    />
+    <meta name="theme-color" content="#181818" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | ISD SGCU</title>
     <slot name="head" />
   </head>
   <body class="min-h-screen bg-primary">
-    <Navbar client:load />
-    <slot />
+    <div class="contents">
+      <Navbar client:load />
+      <slot />
+    </div>
   </body>
 </html>
 
